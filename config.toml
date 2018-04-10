@@ -1,4 +1,4 @@
-baseurl = "ddswhu.me"
+baseurl = "/"
 languageCode = "en-us"
 title = "Ethan DENG's Personal Page"
 theme = "hugo-xmin"
