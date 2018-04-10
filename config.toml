@@ -1,6 +1,6 @@
-baseurl = "/"
+baseurl = "ddswhu.me"
 languageCode = "en-us"
-title = "A minimal Hugo website"
+title = "Ethan DENG's Personal Page"
 theme = "hugo-xmin"
 googleAnalytics = ""
 disqusShortname = ""
@@ -33,5 +33,5 @@ footnotereturnlinkcontents = "↩"
     url = "/index.xml"
 
 [params]
-    description = "A website built through Hugo and blogdown."
-    footer = "&copy; [Yihui Xie](https://yihui.name) 2017 -- 2018 | [Github](https://github.com/yihui) | [Twitter](https://twitter.com/xieyihui)"
+    description = "Ethan DENG's Personal Website"
+    footer = "&copy; [EthanDENG](https://ddswhu.me/) 2018 -- 2020 Theme [XMin](https://themes.gohugo.io/hugo-xmin/) Powered by Hugo and Netlify"
