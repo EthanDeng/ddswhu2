@@ -1,8 +1,8 @@
 {{ partial "header.html" . }}
 <div class="article-meta">
 <h1><span class="title">{{ .Title }}</span></h1>
-{{ with .Params.author }}<h4 class="author">{{ . }}</h4>{{ end }}{{ if (gt .Params.date 0) }}
-<h4 class="date">{{ .Date.Format "2006/01/02" }}</h4>{{ end }}
+{{ with .Params.author }} {{ . }}{{ end }}
+{{ if (gt .Params.date 0) }}{{ .Date.Format "2006/01/02" }}{{ end }}
 </div>
 
 <main>

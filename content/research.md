@@ -4,9 +4,11 @@ title: Research Topics
 
 Welcome to the board of research, here are some records of my research road.
 
+---
+
 ## Paper
 
-+  Zhao Chen, Dongsheng DENG, *Risks and Investor’s Risk Awareness in online P2P Lending: Evidence from Transactions of Lending Platforms* ([Download](/research/p2p_investor_2017.pdf))
++  Zhao Chen, Dongsheng Deng, *Risks and investor’s risk awareness in online P2P lending: evidence from transactions of lending platforms* ([Download](/research/p2p_investor_2017.pdf))
 
 ---
 ## Conference

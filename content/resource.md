@@ -2,6 +2,11 @@
 title: Some Resources 
 ---
 
+
+Welcome to the board of Resource, here are some useful tools or tutorials.
+
+---
+
 ## Stata
 + [Stata Learning Module](/resource/Stata/Stata_learning_modules.pdf)
 + [Stata Class Notes](/resource/Stata/stata_class_notes.pdf)

@@ -2,14 +2,15 @@
 title: Home
 ---
 
-[<img src="/img/bio.png" style="max-width:14%;min-width:40px;float:right;" alt="Ethan DENG" />](https://ddswhu.me/)
+[<img src="/img/bio.png" style="max-width:13%;min-width:40px;float:right;" alt="Dongsheng Deng" />](https://ddswhu.me/)
 
-# **Ethan DENG**
+# Dongsheng Deng
 
-#### Victory won't come to me unless I go to it.
+*Victory won't come to me unless I go to it.--- M. Moore*
 
-I am [Ethan DENG](https://ddswhu.me/), a Ph.D. candidate from [the school of Economics](http://www.econ.fudan.edu.cn/), [Fudan University](http://www.fudan.edu.cn/2016/index.html), Shanghai, China. My reserch topic is P2P lending and behavior of investors, some kind of behavior economics.<br> 
-My advisor is Zhao Chen. His field is Microeconomics Econometrics, Labor Economics and Urban Development. <br>
+I am [Dongsheng Deng](https://ddswhu.me/), a Ph.D. candidate from [the school of Economics](http://www.econ.fudan.edu.cn/), [Fudan University](http://www.fudan.edu.cn/2016/index.html), Shanghai, China. <br>
+My reserch topic is P2P lending and behavior of investors, some kind of behavior economics.<br> 
+My advisor is [Zhao Chen](http://www.econ.fudan.edu.cn/teacherdetail.php?tid=11). His field is Microeconomics Econometrics, Labor Economics and Urban Development. <br>
 
 You can find my cv here, [English Version CV](/archive/EthanDENG-CV-EN.pdf) and  [Chinese Version CV](/archive/EthanDENG-CV-CN.pdf).
 
