@@ -3,7 +3,7 @@ title: Some Resources
 ---
 
 
-Welcome to the board of Resource, here are some useful tools or tutorials.
+Welcome to the board of Resource, here are some useful tools and tutorials.
 
 ---
 
