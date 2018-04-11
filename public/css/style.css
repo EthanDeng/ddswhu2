@@ -1,21 +1,58 @@
 body {
-  max-width: 800px;
+  max-width: 850px;
   margin: auto;
   padding: 1em;
   line-height: 1.5em;
+  font-size: 12pt
+}
+
+h1,h2,h3,h4{
+  font-weight:normal}
+h1{
+  font-size: 20pt
+}
+
+h2{
+  font-size: 18pt
+}
+
+h3{
+  font-size: 16pt
+}
+
+h4{
+  font-size: 14pt
+}
+
+h5 h6{
+  font-size: 12pt
+}
+
+
+.menu { 
+  text-align: right;
+  color:#003371; 
+  padding: 0;
 }
 
 /* header and footer areas */
-.menu { padding: 0; }
 .menu li { display: inline-block; }
 .article-meta, .menu a {
   text-decoration: none;
-  background: #eee;
-  padding: 5px;
-  border-radius: 5px;
+  /*background: #eee;*/
+  padding: 8px;
+  /*margin: 2px;*/
+  border-radius: 10px;
 }
-.menu, .article-meta, footer { text-align: center; }
-.title { font-size: 1.1em; }
+
+.article-meta { 
+  text-align: left; 
+  padding: 0px
+}
+footer { text-align: center; }
+
+
+/*.title { font-size: ; }*/
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
@@ -49,3 +86,5 @@ table {
 table thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
 thead, tfoot, tr:nth-child(even) { background: #eee }
+
+

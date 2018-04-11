@@ -3,27 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/note/2017/06/14/another-note/</loc>
+    <loc>/note-2017-06-14/another-note/</loc>
     <lastmod>2017-06-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2017/06/13/a-quick-note/</loc>
+    <loc>/note-2017-06-13/a-quick-note/</loc>
     <lastmod>2017-06-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2016/02/14/a-plain-markdown-post/</loc>
+    <loc>/post/2016-02-14/a-plain-markdown-post/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2015/07/23/lorem-ipsum/</loc>
+    <loc>/post/2015-07-23/lorem-ipsum/</loc>
     <lastmod>2015-07-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/about/</loc>
+    <lastmod>2015-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -91,6 +92,14 @@
   </url>
   
   <url>
+    <loc>/research/</loc>
+  </url>
+  
+  <url>
+    <loc>/resource/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -100,6 +109,10 @@
     <loc>/tags/tutorial/</loc>
     <lastmod>2017-06-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/links/</loc>
   </url>
   
 </urlset>
