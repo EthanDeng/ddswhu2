@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Ethan DENG's Personal Page"
+title = "Dongsheng Deng's homepage"
 theme = "hugo-xmin"
 googleAnalytics = ""
 disqusShortname = ""
@@ -34,5 +34,5 @@ footnotereturnlinkcontents = "↩"
     weight = 5
 
 [params]
-    description = "Ethan DENG's Personal Website"
+    description = "Dongsheng Deng's homepage"
     footer = "&copy; [EthanDENG](https://ddswhu.me/) 2018 -- 2020 Theme [XMin](https://themes.gohugo.io/hugo-xmin/) Powered by Hugo and Netlify"

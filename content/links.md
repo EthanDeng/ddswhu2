@@ -3,7 +3,7 @@ title: iFriend Links
 ---
 
 
-+ [Ethan DENG's Blog](http://ddswhu.com/): My blog website.
++ [My Blog](http://ddswhu.com/): My blog website.
 + [Xin Ye](https://myxy.org/): my undergradute Roommate. Ph.D. candidate from the Department of Mathematics, Purdue University.
 + [Liam Huang](https://liam0205.me/): Coauthor of the ElegantLaTeX Note/Book Template, a programmer, TeXer.
 + [Murong Wang](http://wangmurong.org.cn/): Team Member of the ElegantLaTeX Program, data scientist.
