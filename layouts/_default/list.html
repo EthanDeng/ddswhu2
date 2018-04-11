@@ -2,11 +2,7 @@
 
 {{if not .IsHome }}
 <h1>{{ .Title }}</h1>
-{{ end }}
-
 {{ .Content }}
-
-{{if not .IsHome }}
 <ul>
   {{ range (where .Data.Pages "Section" "!=" "") }}
   <li>
@@ -15,6 +11,12 @@
   </li>
   {{ end }}
 </ul>
+{{ end }}
+
+
+
+{{if .IsHome }}
+{{ .Content}}
 {{ end }}
 
 

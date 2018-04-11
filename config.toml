@@ -9,7 +9,7 @@ preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
 [permalinks]
-    post = "/post/:year-:month-:day/:slug/"
+    post = "/posts/:year-:month-:day/:slug/"
     note = "/note-:year-:month-:day/:slug/"
 
 [[menu.main]]
@@ -25,8 +25,8 @@ footnotereturnlinkcontents = "↩"
     url = "/resource/"
     weight = 3
 [[menu.main]]
-    name = "About"
-    url = "/about/"
+    name = "Posts"
+    url = "/posts/"
     weight = 4
 [[menu.main]]
     name = "Links"
