@@ -8,9 +8,9 @@ Welcome to the board of research, here are some records of my research road.
 
 ## Paper
 
-+ Dongsheng Deng, *Inflation policy under regime instability*, 2012. ([paper](/research/inflation_2012.pdf), [slides](/research/inflation_slides_2012.pdf))
-+ Dongsheng Deng, Rongwei Chu, "Relationship between migrants’ remittance and life satisfaction", 2014. ([paper](/research/remittance_2014.pdf))
-+  Zhao Chen, Dongsheng Deng, *Risks and investor’s risk awareness in online P2P lending: evidence from transactions of lending platforms*, 2017. ([paper](/research/p2p_investor_2017.pdf), [slides](/research/p2p_investor_slides_2017.pdf))
++ Dongsheng Deng. *Inflation policy under regime instability*, 2012. ([paper](/research/inflation_2012.pdf), [slides](/research/inflation_slides_2012.pdf))
++ Dongsheng Deng, Rongwei Chu. *Relationship between migrants’ remittance and life satisfaction*, 2014. ([paper](/research/remittance_2014.pdf))
++  Zhao Chen, Dongsheng Deng. *Risks and investor’s risk awareness in online P2P lending: evidence from transactions of lending platforms*, 2017. ([paper](/research/p2p_investor_2017.pdf), [slides](/research/p2p_investor_slides_2017.pdf))
 
 ---
 ## Conference
