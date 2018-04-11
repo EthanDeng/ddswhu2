@@ -8,9 +8,9 @@ title: Home
 
 *Victory won't come to me unless I go to it.--- M. Moore*
 
-I am [Dongsheng Deng](https://ddswhu.me/), a Ph.D. candidate from the [School of Economics](http://www.econ.fudan.edu.cn/), [Fudan University](http://www.fudan.edu.cn/2016/index.html), Shanghai, China. <br>
+I am a Ph.D. candidate from [School of Economics](http://www.econ.fudan.edu.cn/), [Fudan University](http://www.fudan.edu.cn/2016/index.html), Shanghai, China. <br>
 My research topic is P2P lending and behavior of investors, some kind of behavior economics.<br> 
-My advisor is [Zhao Chen](http://www.econ.fudan.edu.cn/teacherdetail.php?tid=11). His field is Microeconomics Econometrics, Labor Economics and Urban Development. <br>
+My advisor is [Zhao Chen](http://www.econ.fudan.edu.cn/teacherdetail.php?tid=11). His field is Microeconomics Econometrics, Labor Economics and Urban Development. Recently, he focus on Environment Economics and International Trade. <br>
 
 You can find my CVs here, [English version](/archive/EthanDENG-CV-EN.pdf) and  [Chinese version](/archive/EthanDENG-CV-CN.pdf).
 
