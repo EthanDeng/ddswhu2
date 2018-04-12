@@ -9,8 +9,8 @@ preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
 [permalinks]
-    post = "/posts/:year-:month-:day/:slug/"
-    note = "/note-:year-:month-:day/:slug/"
+    posts = "/posts/:year-:month/:slug/"
+    note = "/note/:slug/"
 
 [[menu.main]]
     name = "Home"
@@ -35,4 +35,4 @@ footnotereturnlinkcontents = "↩"
 
 [params]
     description = "Dongsheng Deng's homepage"
-    footer = "&copy; [EthanDENG](https://ddswhu.me/) 2018 -- 2020 Theme [XMin](https://themes.gohugo.io/hugo-xmin/) Powered by Hugo and Netlify"
+    footer = "&copy; [Dongsheng Deng](https://ddswhu.me/) 2018 -- 2020 Theme [XMin](https://themes.gohugo.io/hugo-xmin/) Powered by Hugo and Netlify"
