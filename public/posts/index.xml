@@ -12,34 +12,23 @@
     
     
     <item>
+      <title>Export MongoDB to csv</title>
+      <link>/posts/2018-04/export-mongodb-to-csv/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-04/export-mongodb-to-csv/</guid>
+      <description>1. store json file to MongoDB When scraping data from web, the response may be json format, we can use json library to handle this.
+import requests import json import pymongo connection = pymongo.MongoClient() data_base = connection.data_base collection = data_base.collection response = requests.post(url=url, data=payload, headers=headers) if response.status_code == 200: result_json = response.json() collection.insert(result_json)  If the json file is in right format, then you can use mongoexport command to export to csv.</description>
+    </item>
+    
+    <item>
       <title>Start MongoDB as service</title>
       <link>/posts/2018-04/start-mongodb-as-service/</link>
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/2018-04/start-mongodb-as-service/</guid>
-      <description>1. start MongoDB normally Once you installed MongoDB on your PC, you can start MongoDB using
-mongod --dbpath C:\MongoDB\Server\3.6\data\db  2. start MongDB as service  remove the existing MongDB service intall the MongoDB as a service start the MongoDB service stop the MongoDB service  mongod --remove mongod --dbpath=D:\MongoDB\Server\3.6\data\db --logpath=D:\MongoDB\Server\3.6\logs\log.txt --install net start MongoDB net stop MongoDB  When you install or remove MongoDB service to or from you computer, you can add the `&amp;ndash;serviceName YourServiceName&amp;rsquo; flag after the command to customize the service name as you wish.</description>
-    </item>
-    
-    <item>
-      <title>A Plain Markdown Post</title>
-      <link>/posts/2016-02/a-plain-markdown-post/</link>
-      <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2016-02/a-plain-markdown-post/</guid>
-      <description>This sample post is mainly for blogdown users. If you do not use blogdown, you can skip the first section.
-1. Markdown or R Markdown This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.</description>
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum</title>
-      <link>/posts/2015-07/short-format-of-the-post/</link>
-      <pubDate>Thu, 23 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2015-07/short-format-of-the-post/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Quisque mattis volutpat lorem vitae feugiat.</description>
+      <description>1. start MongoDB normally Once you have installed MongoDB on your PC, you can start MongoDB using
+mongod --dbpath C:\MongoDB\Server\3.6\data\db  2. start MongDB as service  remove the existing MongDB service intall the MongoDB as a service start the MongoDB service stop the MongoDB service  mongod --remove mongod --dbpath=D:\MongoDB\Server\3.6\data\db --logpath=D:\MongoDB\Server\3.6\logs\log.txt --install net start MongoDB net stop MongoDB  When you install or remove MongoDB service to or from you computer, you can add the --serviceName YourServiceName flag after the command to customize the service name as you wish.</description>
     </item>
     
   </channel>
