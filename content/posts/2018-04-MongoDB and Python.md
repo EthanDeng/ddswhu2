@@ -13,7 +13,7 @@ tags:
 
 ## 1. start MongoDB normally
 
-Once you installed MongoDB on your PC, you can start MongDB using 
+Once you have installed MongoDB on your PC, you can start MongoDB using 
 
 ```shell
 mongod --dbpath C:\MongoDB\Server\3.6\data\db
@@ -33,7 +33,7 @@ net start MongoDB
 net stop MongoDB
 ```
 
-When you install or remove MongoDB *service* to or from you computer, you can add the `--serviceName YourServiceName' flag after the command to customize the
+When you install or remove MongoDB *service* to or from you computer, you can add the `--serviceName YourServiceName` flag after the command to customize the
 service name as you wish.  
 
 > If needed, you can install services for multiple instances of mongod.exe. Install each service with a unique --serviceName and --serviceDisplayName. Use multiple instances only when sufficient system resources exist and your system design requires it.

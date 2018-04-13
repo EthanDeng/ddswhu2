@@ -3,23 +3,23 @@ body {
   margin: auto;
   padding: 1em;
   line-height: 1.5em;
-  font-size: 12pt
+  font-size: 11pt
 }
 
 h1,h2,h3,h4{
   font-weight:normal;
+  font-weight: bold;
 }
 h1{
-  font-weight: bold;
-  font-size: 17pt
+  font-size: 16pt
 }
 
 h2{
-  font-size: 15pt
+  font-size: 13pt;
 }
 
 h3{
-  font-size: 13pt
+  font-size: 12pt
 }
 
 h4,h5,h6{

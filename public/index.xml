@@ -12,21 +12,13 @@
     
     
     <item>
-      <title>MongoDB 在 Python 中的使用</title>
-      <link>/posts/2018-04/using-mongodb-in-python/</link>
+      <title>Start MongoDB as service</title>
+      <link>/posts/2018-04/start-mongodb-as-service/</link>
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/2018-04/using-mongodb-in-python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hello Hugo How Are You</title>
-      <link>/posts/2018-04/hello-hugo-how-are-you/</link>
-      <pubDate>Tue, 10 Apr 2018 23:41:19 +0800</pubDate>
-      
-      <guid>/posts/2018-04/hello-hugo-how-are-you/</guid>
-      <description>这样写作真的很爽呀~</description>
+      <guid>/posts/2018-04/start-mongodb-as-service/</guid>
+      <description>1. start MongoDB normally Once you installed MongoDB on your PC, you can start MongoDB using
+mongod --dbpath C:\MongoDB\Server\3.6\data\db  2. start MongDB as service  remove the existing MongDB service intall the MongoDB as a service start the MongoDB service stop the MongoDB service  mongod --remove mongod --dbpath=D:\MongoDB\Server\3.6\data\db --logpath=D:\MongoDB\Server\3.6\logs\log.txt --install net start MongoDB net stop MongoDB  When you install or remove MongoDB service to or from you computer, you can add the `&amp;ndash;serviceName YourServiceName&amp;rsquo; flag after the command to customize the service name as you wish.</description>
     </item>
     
     <item>
