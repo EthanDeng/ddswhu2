@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/hello-hugo-how-are-you/</loc>
+    <loc>/posts/2018-04/using-mongodb-in-python/</loc>
+    <lastmod>2018-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2018-04/hello-hugo-how-are-you/</loc>
     <lastmod>2018-04-10T23:41:19+08:00</lastmod>
   </url>
   
@@ -18,12 +23,12 @@
   </url>
   
   <url>
-    <loc>/posts/2016-02-14-hello-markdown/</loc>
+    <loc>/posts/2016-02/a-plain-markdown-post/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/2015-07-23-lorem-ipsum/</loc>
+    <loc>/posts/2015-07/short-format-of-the-post/</loc>
     <lastmod>2015-07-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -51,7 +56,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-04-10T23:41:19+08:00</lastmod>
+    <lastmod>2018-04-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -73,6 +78,12 @@
   </url>
   
   <url>
+    <loc>/tags/mongodb/</loc>
+    <lastmod>2018-04-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/note/</loc>
     <lastmod>2017-06-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -86,7 +97,19 @@
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2018-04-10T23:41:19+08:00</lastmod>
+    <lastmod>2018-04-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2018-04-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/python/</loc>
+    <lastmod>2018-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

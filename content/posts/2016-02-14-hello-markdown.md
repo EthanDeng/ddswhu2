@@ -43,11 +43,11 @@ Actually I recommend you to use the RStudio addin "New Post" instead:
 
 # 2. Sample Text
 
-## Second-level header
+## 2 Second-level header
 
-### Third-level header
+### 3 Third-level header
 
-#### Fourth-level header
+#### 4.Fourth-level header
 
 A paragraph (with a footnote):
 

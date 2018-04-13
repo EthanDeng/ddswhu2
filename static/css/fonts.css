@@ -1,5 +1,5 @@
 body {
-  font-family: Minion Pro, Palatino Linotype, Garamond, Ubuntu, AR PL UMing HK, WenQuanYi Micro Hei, Microsoft Yahei, Open Sans, Simsun,serif;
+  font-family: Palatino Linotype, Garamond, Ubuntu, AR PL UMing HK, Open Sans,Microsoft Yahei, Simsun, serif;
 }
 code {
   font-family: Ubuntu Mono, Lucida Console, Courier New, Monaco,Microsoft Yahei, monospace;
@@ -7,5 +7,5 @@ code {
 }
 
 h2,h3,h4,h5,h6{
-	font-family: Myriad Pro, Segoe UI, WenQuanYi Micro Hei, Microsoft Yahei, Alegreya,AR PL UMing HK, Open Sans, Arial,sans-serif;
+	font-family: Microsoft Yahei, Alegreya,AR PL UMing HK, Open Sans, Arial,sans-serif;
 }

@@ -6,26 +6,35 @@
     <description>Recent content in Posts on Dongsheng Deng&#39;s homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Apr 2018 23:41:19 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>MongoDB 在 Python 中的使用</title>
+      <link>/posts/2018-04/using-mongodb-in-python/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-04/using-mongodb-in-python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Hello Hugo How Are You</title>
-      <link>/posts/hello-hugo-how-are-you/</link>
+      <link>/posts/2018-04/hello-hugo-how-are-you/</link>
       <pubDate>Tue, 10 Apr 2018 23:41:19 +0800</pubDate>
       
-      <guid>/posts/hello-hugo-how-are-you/</guid>
+      <guid>/posts/2018-04/hello-hugo-how-are-you/</guid>
       <description>这样写作真的很爽呀~</description>
     </item>
     
     <item>
       <title>A Plain Markdown Post</title>
-      <link>/posts/2016-02-14-hello-markdown/</link>
+      <link>/posts/2016-02/a-plain-markdown-post/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/posts/2016-02-14-hello-markdown/</guid>
+      <guid>/posts/2016-02/a-plain-markdown-post/</guid>
       <description>This sample post is mainly for blogdown users. If you do not use blogdown, you can skip the first section.
 1. Markdown or R Markdown This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
  You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.</description>
@@ -33,10 +42,10 @@
     
     <item>
       <title>Lorem Ipsum</title>
-      <link>/posts/2015-07-23-lorem-ipsum/</link>
+      <link>/posts/2015-07/short-format-of-the-post/</link>
       <pubDate>Thu, 23 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>/posts/2015-07-23-lorem-ipsum/</guid>
+      <guid>/posts/2015-07/short-format-of-the-post/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Quisque mattis volutpat lorem vitae feugiat.</description>
     </item>
