@@ -3,7 +3,7 @@ title: Some Resources
 ---
 
 
-Welcome to the board of Resource, here are some useful tools and tutorials.
+Welcome to the board of resource, here are some useful tools and tutorials.
 
 ---
 
@@ -17,8 +17,10 @@ Welcome to the board of Resource, here are some useful tools and tutorials.
 
 ## LaTeX 
 + [ElegantLaTeX Book Templates](/resource/LaTeX/elegantbook v2.20.zip): Designed by [Dongsheng Deng](https://ddswhu.me/) and [Liam Huang](https://liam0205.me/).
++ [Metropolis](https://github.com/matze/mtheme): A very beautiful and modern beamer theme. ([Github](https://github.com/matze/mtheme), [Download](/resource/LaTeX/mtheme-master.zip), [Manual](http://mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf))
 + LaTeX Beamer tutorial. ([Beamer tutorial 2015](/resource/LaTeX/beamer_tutorial_2015.pdf), [Beamer tutorial 2017](/resource/LaTeX/beamer_tutorial_2017.pdf))
 + LaTeX graphic tutorial. ([graphic tutorial](/resource/LaTeX/graphic_tutorial_2015.pdf))
+
 
 ## Design
 

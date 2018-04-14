@@ -28,7 +28,7 @@ mongod --dbpath C:\MongoDB\Server\3.6\data\db
 
 ```shell
 mongod --remove 
-mongod --dbpath=D:\MongoDB\Server\3.6\data\db --logpath=D:\MongoDB\Server\3.6\logs\log.txt --install
+mongod --dbpath=C:\MongoDB\Server\3.6\data\db --logpath=C:\MongoDB\Server\3.6\logs\log.txt --install
 net start MongoDB
 net stop MongoDB
 ```
