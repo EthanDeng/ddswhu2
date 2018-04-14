@@ -102,22 +102,16 @@ The code is as follows
 
 ```python
 import json 
-import pandas
+import pandas as pd
 
-# 1. del the un-balanced field.
-if 'id' in long_dict:
-    del long_dict['id']
-
-# 2. dump dict to json string, and loads to get json type.
+# 1. dump dict to json string, and loads to get json type.
 result_json = json.loads(json.dumps(long_dict))
-# 3. get back the id field.
-result_json['id'] = 34
 
-# 4. convert the balanced json to pandas data frame.
+# 2. convert the json to pandas data frame.
 result_df =pd.DataFrame.from_records(result_json)
 
-# 5. convert the data frame to dict using to_dict method and argument "records".
-# 6. insert all the records to MongoDB.
+# 3. convert the data frame to dict using to_dict method with argument "records".
+# 4. insert all the records to MongoDB.
 db_test.insert_many(result_df.to_dict('records'))
 ```
 
