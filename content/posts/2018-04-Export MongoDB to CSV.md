@@ -1,8 +1,8 @@
 ---
-title: Export MongoDB to csv
+title: Export from MongoDB to csv
 date: '2018-04-13'
 author: Dongsheng Deng @
-slug: export mongodb to csv
+slug: export from mongodb to csv
 draft: false
 categories:
   - Python
@@ -12,7 +12,7 @@ tags:
   - JSON
 ---
 
-## 1. store json file to MongoDB
+## 1. Use MongoDB to save json file
 When scraping data from web, the response may be json format, we can use `json` library to handle this.
 
 ```python
@@ -38,9 +38,9 @@ If the json file is in right format, then you can use `mongoexport` command to e
 mongoexport --db data_base --collection collection --type=csv --fields field1,field2,field3, --out "D:\output.csv"
 ```
 
-However, sometimes the filed of the json file contains a array, moreover, you need to convert the field array to rows of a table (ie, observations), and convert the field name to the header of the table (ie, variable name). When the field is a dict, then you can treat the key-value pair as a subfield, and export as the normal field (length of 1).
+When the field is a dict, then you can treat the key-value pair as a subfield, and export as the normal field (length of 1). However, sometimes the filed of the json file contains a array, moreover, you need to convert the field array to rows of a table (ie, observations), and convert the field name to the header of the table (ie, variable name). 
 
-## 2. Convert non-regular json to normal json
+## 2. Convert non-regular json to normal for exporting
 For instance, the following json (from MongoDB) is not in the regular format, we cannot do much to the json (map reduce, aggregate, pipline operation etc.), we need convert it to normal table, export to csv/table or re-dump into MongoDB.
 
 ```json
