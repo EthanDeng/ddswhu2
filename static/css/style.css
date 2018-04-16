@@ -56,6 +56,7 @@ hr {
   color: #ddd;
 }
 
+
 /* code */
 pre {
   border: 1px solid #ddd;
@@ -84,4 +85,8 @@ table thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
 thead, tfoot, tr:nth-child(even) { background: #eee }
 
+
+a:link { color: blue; }  
+a:visited { color: blue; }  
+a:hover { color: magenta; }  
 

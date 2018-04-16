@@ -8,7 +8,7 @@ Welcome to the board of resource, here are some useful tools and tutorials.
 ---
 
 ## Stata
-+ [Stata Learning Module](/resource/Stata/Stata_learning_modules.pdf)
++ [Stata Learning Module](/resource/Stata/stata_learning_modules.pdf)
 + [Stata Class Notes](/resource/Stata/stata_class_notes.pdf)
 
 ---
