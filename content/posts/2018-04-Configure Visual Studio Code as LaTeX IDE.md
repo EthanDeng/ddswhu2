@@ -59,7 +59,7 @@ VS Code 默认添加了3个编译工具（tools）：分别是 `latexmk`，`pdfl
 	          "%DOC%"
         	]
         },
-		{
+		  {
 	        "name": "pdflatex",
 	        "command": "pdflatex",
 	        "args": [
@@ -68,7 +68,18 @@ VS Code 默认添加了3个编译工具（tools）：分别是 `latexmk`，`pdfl
 	          "-file-line-error",
 	          "%DOC%"
 	        ]
-	    },
+	      },
+      {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "%DOC%"
+          ]
+        },
 	    {
 	        "name": "bibtex",
 	        "command": "bibtex",
