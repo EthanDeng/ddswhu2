@@ -35,8 +35,9 @@ if response.status_code == 200:
 If the json file is in right format, then you can use `mongoexport` command to export to csv.
 
 ```shell 
-mongoexport --db data_base --collection collection --type=csv --fields field1,field2,field3, --out "D:\output.csv"
+mongoexport --db database --collection collection  --type=csv --fields field1,field2 --out "dir\collection.txt"
 ```
+**WARNING**: <span style="color:red">Please use `txt` extension as the export file extension. DO NOT use `csv`, otherwise, you will lose **0** if some value string starts with `0`.</span> (*renew: 2018/04/17*)
 
 When the field is a dict, then you can treat the key-value pair as a subfield, and export as the normal field (length of 1). However, sometimes the filed of the json file contains a array, moreover, you need to convert the field array to rows of a table (ie, observations), and convert the field name to the header of the table (ie, variable name). 
 
