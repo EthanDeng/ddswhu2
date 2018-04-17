@@ -48,46 +48,46 @@ VS Code 默认添加了3个编译工具（tools）：分别是 `latexmk`，`pdfl
 为了添加其他的编译方式（比如 `xelatex`），我们需要修改 LaTeX Workshop 的配置。方法如下：打开 VS Code 的配置（VS Code 界面左下角，点击齿轮按钮，选择设置），在右侧（用户设置）粘贴下面 JSON 片段：
 
 ```json
-"latex-workshop.latex.tools": [
-	    {
-	        "name": "xelatex",
-	        "command": "xelatex",
-	        "args": [
-	          "-synctex=1",
-	          "-interaction=nonstopmode",
-	          "-file-line-error",
-	          "%DOC%"
-        	]
-        },
-		  {
-	        "name": "pdflatex",
-	        "command": "pdflatex",
-	        "args": [
-	          "-synctex=1",
-	          "-interaction=nonstopmode",
-	          "-file-line-error",
-	          "%DOC%"
-	        ]
-	      },
-      {
-      "name": "latexmk",
-      "command": "latexmk",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "-pdf",
-        "%DOC%"
-          ]
-        },
-	    {
-	        "name": "bibtex",
-	        "command": "bibtex",
-	        "args": [
-	          "%DOCFILE%"
-	    	]
-	    }
-	],
+        "latex-workshop.latex.tools": [
+          {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ]
+          },
+          {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ]
+          },
+          {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-pdf",
+              "%DOC%"
+            ]
+          },
+          {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+              "%DOCFILE%"
+            ]
+          }
+        ],
 ```
 
 **注意**，虽然左侧插件默认添加了编译方式（`pdflatex` 与 `bibtex`），也必须将其编译方式的设置（比如 `latex` 等）添加到右侧用户设置中。
