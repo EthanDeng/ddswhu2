@@ -6,19 +6,34 @@
     <description>Recent content in Posts on Dongsheng Deng&#39;s homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Export MongoDB to csv</title>
-      <link>/posts/2018-04/export-mongodb-to-csv/</link>
+      <title>Configure Visual Stuido Code as LaTeX IDE</title>
+      <link>/posts/2018-04/vs-code-for-latex/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-04/vs-code-for-latex/</guid>
+      <description>本文介绍如何配置 Visual Studio Code 作为 LaTeX 的编辑器。
+1. 为什么用 Visual Studio Code Visual Studio Code（以下简称 VS Code） 是微软推出的一个编辑器，它的优点你可以百度一下，这里不赘述。对我来说，它最有吸引力的当属在 Windows 系统，它对于中英文字体的渲染。如果你原来用过其他编辑器，你就知道在普通屏幕上，中英文的显示效果简直是灾难。我原来因为编辑器的中文显示（当然还有 Terminal 的吸引力）一度想买 Mac，当然最后因为对性能和颜值的追求并不匹配我的财力，加上 Windows 上有些软件不能舍弃，最后作罢。
+注：高分屏加上合适的字体，Sublime Text 的显示效果也非常好。
+Visual Studio Code 的界面图
+
+2. 准备工作 首先，为了搭建 LaTeX 工作环境，你需要安装：
+ TeX Live 或者 MiKTeX （本文以 TeX Live 2017 为例） Visual Studio Code LaTeX Workshop （VS Code 插件） SumatraPDF 阅读器（可选，用于预览 PDF）  在上述软件/插件安装之后，你需要把 TeX Live 的 bin 目录（D:\Program Files\texlive\2017\bin\win32）以及 SumtraPDF 的路径（C:\Program Files (x86)\SumatraPDF）添加到系统环境变量（PATH）中。</description>
+    </item>
+    
+    <item>
+      <title>Export from MongoDB to csv</title>
+      <link>/posts/2018-04/export-from-mongodb-to-csv/</link>
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/2018-04/export-mongodb-to-csv/</guid>
-      <description>1. store json file to MongoDB When scraping data from web, the response may be json format, we can use json library to handle this.
-import requests import json import pymongo connection = pymongo.MongoClient() data_base = connection.data_base collection = data_base.collection response = requests.post(url=url, data=payload, headers=headers) if response.status_code == 200: result_json = response.json() collection.insert(result_json)  If the json file is in right format, then you can use mongoexport command to export to csv.</description>
+      <guid>/posts/2018-04/export-from-mongodb-to-csv/</guid>
+      <description>1. Use MongoDB to save json file When scraping data from web, the response may be json format, we can use json library to handle this.
+import requests import json import pymongo # start pymongo connection = pymongo.MongoClient() data_base = connection.data_base collection = data_base.collection response = requests.post(url=url, data=payload, headers=headers) if response.status_code == 200: result_json = response.json() collection.insert(result_json)  If the json file is in right format, then you can use mongoexport command to export to csv.</description>
     </item>
     
     <item>
@@ -28,7 +43,7 @@ import requests import json import pymongo connection = pymongo.MongoClient() da
       
       <guid>/posts/2018-04/start-mongodb-as-service/</guid>
       <description>1. start MongoDB normally Once you have installed MongoDB on your PC, you can start MongoDB using
-mongod --dbpath C:\MongoDB\Server\3.6\data\db  2. start MongDB as service  remove the existing MongDB service intall the MongoDB as a service start the MongoDB service stop the MongoDB service  mongod --remove mongod --dbpath=D:\MongoDB\Server\3.6\data\db --logpath=D:\MongoDB\Server\3.6\logs\log.txt --install net start MongoDB net stop MongoDB  When you install or remove MongoDB service to or from you computer, you can add the --serviceName YourServiceName flag after the command to customize the service name as you wish.</description>
+mongod --dbpath C:\MongoDB\Server\3.6\data\db  2. start MongDB as service  remove the existing MongDB service intall the MongoDB as a service start the MongoDB service stop the MongoDB service  mongod --remove mongod --dbpath=C:\MongoDB\Server\3.6\data\db --logpath=C:\MongoDB\Server\3.6\logs\log.txt --install net start MongoDB net stop MongoDB  When you install or remove MongoDB service to or from you computer, you can add the --serviceName YourServiceName flag after the command to customize the service name as you wish.</description>
     </item>
     
   </channel>

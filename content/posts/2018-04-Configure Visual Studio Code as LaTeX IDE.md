@@ -154,7 +154,7 @@ VS Code 默认添加了3个编译工具（tools）：分别是 `latexmk`，`pdfl
 
 示例如下：
 
-```TeX
+```tex
 % !TEX program = xelatex
 \documentclass{article}
 
@@ -192,6 +192,33 @@ LaTeX Workshop 的快捷键并不友好，我们可以自定义快捷键，方�
     "latex-workshop.view.pdf.viewer": "external",
     "latex-workshop.latex.autoBuild.onSave.enabled": false,
 ```
+
+
+```go-html-template
+<section id="main">
+  <div>
+    <h1 id="title">{{ .Title }}</h1>
+    {{ range .Data.Pages }}
+      {{ .Render "summary"}}
+    {{ end }}
+  </div>
+</section>
+```
+
+<pre><code class="html">
+% !TEX program = xelatex
+\documentclass{article}
+
+\author{Dongsheng Deng}
+\title{Configuration of Visual Studio Code for LaTeX Users}
+
+\begin{document}
+\maketitle
+
+Example text.
+
+\end{document}
+</code></pre>
 
 ## Reference
 
