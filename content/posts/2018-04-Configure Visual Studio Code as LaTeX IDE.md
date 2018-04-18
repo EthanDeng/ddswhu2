@@ -48,46 +48,46 @@ VS Code 默认添加了3个编译工具（tools）：分别是 `latexmk`，`pdfl
 为了添加其他的编译方式（比如 `xelatex`），我们需要修改 LaTeX Workshop 的配置。方法如下：打开 VS Code 的配置（VS Code 界面左下角，点击齿轮按钮，选择设置），在右侧（用户设置）粘贴下面 JSON 片段：
 
 ```json
-        "latex-workshop.latex.tools": [
-          {
-            "name": "xelatex",
-            "command": "xelatex",
-            "args": [
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "%DOC%"
-            ]
-          },
-          {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "%DOC%"
-            ]
-          },
-          {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "-pdf",
-              "%DOC%"
-            ]
-          },
-          {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-              "%DOCFILE%"
-            ]
-          }
-        ],
+"latex-workshop.latex.tools": [
+  {
+    "name": "xelatex",
+    "command": "xelatex",
+    "args": [
+      "-synctex=1",
+      "-interaction=nonstopmode",
+      "-file-line-error",
+      "%DOC%"
+    ]
+  },
+  {
+    "name": "pdflatex",
+    "command": "pdflatex",
+    "args": [
+      "-synctex=1",
+      "-interaction=nonstopmode",
+      "-file-line-error",
+      "%DOC%"
+    ]
+  },
+  {
+    "name": "latexmk",
+    "command": "latexmk",
+    "args": [
+      "-synctex=1",
+      "-interaction=nonstopmode",
+      "-file-line-error",
+      "-pdf",
+      "%DOC%"
+    ]
+  },
+  {
+    "name": "bibtex",
+    "command": "bibtex",
+    "args": [
+      "%DOCFILE%"
+    ]
+  }
+],
 ```
 
 **注意**，虽然左侧插件默认添加了编译方式（`pdflatex` 与 `bibtex`），也必须将其编译方式的设置（比如 `latex` 等）添加到右侧用户设置中。
@@ -99,49 +99,49 @@ VS Code 默认添加了3个编译工具（tools）：分别是 `latexmk`，`pdfl
 
 ```json
 "latex-workshop.latex.recipes": [
-        {
-          "name": "PDFLaTeX",
-          "tools": [
-            "pdflatex"
-          ]
-      	},
-        {
-          "name": "XeLaTeX",
-          "tools": [
-            "xelatex"
-          ]
-        },
-        {
-          "name": "latexmk",
-          "tools": [
-            "latexmk"
-          ]
-        },
-        {
-          "name": "BibTeX",
-          "tools": [
-            "bibtex"
-          ]
-        },
-        {
-          "name": "pdflatex -> bibtex -> pdflatex*2",
-          "tools": [
-            "pdflatex",
-            "bibtex",
-            "pdflatex",
-            "pdflatex"
-          ]
-        },
-        {
-          "name": "xelatex -> bibtex -> xelatex*2",
-          "tools": [
-            "xelatex",
-            "bibtex",
-            "xelatex",
-            "xelatex"
-          ]
-        }
-    ],
+    {
+      "name": "PDFLaTeX",
+      "tools": [
+        "pdflatex"
+      ]
+  	},
+    {
+      "name": "XeLaTeX",
+      "tools": [
+        "xelatex"
+      ]
+    },
+    {
+      "name": "latexmk",
+      "tools": [
+        "latexmk"
+      ]
+    },
+    {
+      "name": "BibTeX",
+      "tools": [
+        "bibtex"
+      ]
+    },
+    {
+      "name": "pdflatex -> bibtex -> pdflatex*2",
+      "tools": [
+        "pdflatex",
+        "bibtex",
+        "pdflatex",
+        "pdflatex"
+      ]
+    },
+    {
+      "name": "xelatex -> bibtex -> xelatex*2",
+      "tools": [
+        "xelatex",
+        "bibtex",
+        "xelatex",
+        "xelatex"
+      ]
+    }
+  ],
 ```
 
 这里提供一个测试完整编译方式的代码（[tex](/posts/archive/content.tex), [bib](/posts/archive/info.bib), [pdf](/posts/archive/content.pdf)），你可以用来测试能否编译。效果图如下：
@@ -185,40 +185,16 @@ LaTeX Workshop 的快捷键并不友好，我们可以自定义快捷键，方�
 
 配置好快捷键之后，之后当你指定了编译方式时可以直接使用快捷键 `Ctrl+B` 编译一次文档。当你需要完整编译整个文档（文献，目录等），使用快捷键 `Ctrl+R`，选择完整的编译方案即可。是不是方便多了？
 
+**补充**：为了方便快捷键的绑定，这里直接提供设置文件（`keybindings.json`）的 [下载](/posts/archive/keybindings.json)，下载之后只需要将其替换用户的快捷键设置即可（默认位置为：`C:\Users\YourUserName\AppData\Roaming\Code\User\keybindings.json`）。(*renew: 2018/04/18*)
+
 ## 4.2 配置阅读器以及自动编译
 还有其他几个设置需要提一下，由于笔记本的屏幕很小，我并不习惯使用 VS Code 自带的 PDF 阅读器作为预览的阅读器，可以设置 `SumatraPDF` 作为 PDF 阅读器。另外，自动编译选项我也选择关闭。
 
 ```json
-    "latex-workshop.view.pdf.viewer": "external",
-    "latex-workshop.latex.autoBuild.onSave.enabled": false,
+"latex-workshop.view.pdf.viewer": "external",
+"latex-workshop.latex.autoBuild.onSave.enabled": false,
 ```
 
-
-```go-html-template
-<section id="main">
-  <div>
-    <h1 id="title">{{ .Title }}</h1>
-    {{ range .Data.Pages }}
-      {{ .Render "summary"}}
-    {{ end }}
-  </div>
-</section>
-```
-
-<pre><code class="html">
-% !TEX program = xelatex
-\documentclass{article}
-
-\author{Dongsheng Deng}
-\title{Configuration of Visual Studio Code for LaTeX Users}
-
-\begin{document}
-\maketitle
-
-Example text.
-
-\end{document}
-</code></pre>
 
 ## Reference
 

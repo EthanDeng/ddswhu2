@@ -1,0 +1,29 @@
+// 将键绑定放入此文件中以覆盖默认值
+[
+    {
+        "key": "ctrl+b",
+        "command": "latex-workshop.build",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+1",
+        "command": "latex-workshop.view",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "latex-workshop.close-env"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "latex-workshop.navigate-envpair"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "latex-workshop.recipes"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "latex-workshop.compilerlog"
+    }
+]
