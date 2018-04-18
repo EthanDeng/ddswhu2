@@ -180,7 +180,7 @@ LaTeX Workshop 的快捷键并不友好，我们可以自定义快捷键，方�
 + 搜索 `build with recipe`，将其改为 `Ctrl+R`
 + 搜索 `latex pdf file`，将其改为 `Ctrl+1`
 + 搜索 `close environment`，将其改为 `Ctrl+E`
-+ 搜索 `latex compiler log`，将其改为 `Ctrl+L`
++ 搜索 `latex compiler log`，将其改为 `Ctrl+O`
 + 你还可以补充其他快捷键。
 
 配置好快捷键之后，之后当你指定了编译方式时可以直接使用快捷键 `Ctrl+B` 编译一次文档。当你需要完整编译整个文档（文献，目录等），使用快捷键 `Ctrl+R`，选择完整的编译方案即可。是不是方便多了？
