@@ -16,3 +16,4 @@ author: This board shows my friends' webpage and some tools' official links
 + [Everything](http://www.voidtools.com/): To locate files and folders by name instantly.
 + [Studio 3T](https://studio3t.com/): The best MongoDB GUI for me (Windows 10), free for non-commercial use.
 + [Be JSON](http://www.bejson.com/): A useful tool for json decoding.
++ [LaTeX Templates](http://www.latextemplates.com/): The so called "The best source of free quality LaTeX templates".

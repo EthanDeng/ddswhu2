@@ -31,7 +31,7 @@ Visual Studio Code（以下简称 VS Code） 是微软推出的一个编辑器�
 + LaTeX Workshop （VS Code 插件）
 + SumatraPDF 阅读器（可选，用于预览 PDF）
 
-在上述软件/插件安装之后，你需要把 TeX Live 的 bin 目录（`D:\Program Files\texlive\2017\bin\win32`）以及 SumtraPDF 的路径（`C:\Program Files (x86)\SumatraPDF`）添加到系统环境变量（`PATH`）中。
+在上述软件/插件安装之后，你需要把 TeX Live 的 bin 目录（`D:\Program Files\texlive\2017\bin\win32`）以及 SumatraPDF 的路径（`C:\Program Files (x86)\SumatraPDF`）添加到系统环境变量（`PATH`）中。
 
 ### 2.1 安装插件
 VS Code 中插件安装方法如下：在左侧点击扩展按钮（KEY：`Ctrl+Shift+X`）,然后搜索插件名字 LaTeX Workshop，选择安装即可。
@@ -173,7 +173,7 @@ Example text.
 
 
 ## 4 其他配置
-## 4.1 配置快捷键
+### 4.1 配置快捷键
 LaTeX Workshop 的快捷键并不友好，我们可以自定义快捷键，方法如下：点击 VS Code 左下角的齿轮（设置），选择 `键盘快捷方式`。
 
 + 搜索 `latex build`，将默认的快捷方式改为 `Ctrl+B`
@@ -187,7 +187,7 @@ LaTeX Workshop 的快捷键并不友好，我们可以自定义快捷键，方�
 
 **补充**：为了方便快捷键的绑定，这里直接提供设置文件（`keybindings.json`）的 [下载](/posts/archive/keybindings.json)，下载之后只需要将其替换用户的快捷键设置即可（默认位置为：`C:\Users\YourUserName\AppData\Roaming\Code\User\keybindings.json`）。(*renew: 2018/04/18*)
 
-## 4.2 配置阅读器以及自动编译
+### 4.2 配置阅读器以及自动编译
 还有其他几个设置需要提一下，由于笔记本的屏幕很小，我并不习惯使用 VS Code 自带的 PDF 阅读器作为预览的阅读器，可以设置 `SumatraPDF` 作为 PDF 阅读器。另外，自动编译选项我也选择关闭。
 
 ```json
@@ -195,6 +195,8 @@ LaTeX Workshop 的快捷键并不友好，我们可以自定义快捷键，方�
 "latex-workshop.latex.autoBuild.onSave.enabled": false,
 ```
 
+### 4.3 Mac 系统 PDF 阅读器配置
+如何让 VS Code 在 Mac 上与诸如 Skim 的外部 PDF 浏览器配合工作——特别是 LaTeX 的正反跳转，请参考小L 的[配置说明](https://liam0205.me/2018/04/24/Working-with-VSCode-on-macOS-configuration-LaTeX-workshop-and-Skim/)。
 
 ## Reference
 
