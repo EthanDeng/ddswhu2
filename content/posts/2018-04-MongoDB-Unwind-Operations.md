@@ -16,7 +16,7 @@ Just as the [MongoDB manual](https://docs.mongodb.com/manual/reference/operator/
 
 Here are two different cases in appliaction. It depends how the data is stored.
 
-## 1. M array fields × N observations case
+## 1. $M$ array fields × $N$ observations case
 
 If we have $K$ variables in one document, and $M$ variables are stored as array field. The value of each array field is a list of length $N$, corresponse to the $N$ observation of the variable (i.e. array field).
 
@@ -47,7 +47,7 @@ I take the previous example for illustration. The document is
 }
 ```
 
-In this document, the final out required contains 4 variables, and 3 variables are store as array field. We can use the `unwind` and `project` operation to the right table (4×4 table). The query code is 
+In this document, the final out required contains 4 variables, and 3 variables are store as array field. We can use the `unwind` and `project` operation to get the right table (4×4 table). The query code is 
 
 ``` js
 // Requires official MongoShell 3.6+
@@ -115,7 +115,7 @@ In stage 1, we unwind the `date` field, and it returns the `idx` indicates the i
 }
 ```
 
-## 1 array field × N obeservations × M variables case
+## 2. $1$ array field × $N$ obeservations × $M$ variables case
 
 In this case, the document is something like that 
 
