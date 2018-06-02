@@ -10,7 +10,8 @@ author: This board lists my travel records and shows my photos.
 + Summer camp of Fudan University, *August 2012*, Shanghai ,China.
 + Ancient town of Xitang, *March 2014*, Jiaxing, Zhejiang, China.
 + The Summer Palace, *July 2015*, Beijing, China.
-+ Visit friends and go sightseeing, *Apirl 2018*, Berlin, Germany.
++ Visit friends and go sightseeing, *Apirl 2017*, Berlin, Germany.
++ Sanya, *January 2018*，Hainan, China.
 
 ## Photo Album
 
