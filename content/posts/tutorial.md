@@ -21,10 +21,8 @@ tags:
 + 不同的选择：
   + CTeX 套装，自带 WinEdt
   + TeX Live 套装，自带 TeXworks Editor
-  + TeXmaker
-  + TeXstudio
+  + TeXmaker/TeXstudio
   + Sublime Text
-  + Atom
   + Visual Studio Code
   + Vim/Emacs/TeXshop
 
