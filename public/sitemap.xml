@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/2018-06/sublime-text-for-latex/</loc>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2018-04/unwind-operation-in-mongodb/</loc>
+    <lastmod>2018-04-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/2018-04/vs-code-for-latex/</loc>
     <lastmod>2018-04-17T00:00:00+00:00</lastmod>
   </url>
@@ -39,7 +49,7 @@
   
   <url>
     <loc>/tags/editor/</loc>
-    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -51,7 +61,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -62,19 +72,25 @@
   
   <url>
     <loc>/tags/latex/</loc>
-    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/latex/</loc>
-    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/mongodb/</loc>
-    <lastmod>2018-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/mongodb/</loc>
+    <lastmod>2018-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -86,7 +102,7 @@
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -111,8 +127,14 @@
   </url>
   
   <url>
+    <loc>/tags/sublime-text-3/</loc>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
-    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

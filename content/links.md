@@ -5,7 +5,7 @@ author: This board shows my friends' webpage and some tools' official links
 
 ---
 ## My Friends
-+ [My Blog](http://ddswhu.com/): My blog website.
++ [My Blog](http://ddswhu.com/): My blog homepage.
 + [Xin Ye](https://myxy.org/): My undergradute roommate. Ph.D. candidate from the Department of Mathematics, Purdue University.
 + [Liam Huang](https://liam0205.me/): Coauthor of the ElegantLaTeX Note/Book Templates, programmer, TeXer.
 + [Murong Wang](http://wangmurong.org.cn/): Member of the ElegantLaTeX program, data scientist.

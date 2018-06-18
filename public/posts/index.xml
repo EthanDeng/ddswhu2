@@ -6,10 +6,36 @@
     <description>Recent content in Posts on Dongsheng Deng&#39;s homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Configure Sublime Text 3 as LaTeX IDE</title>
+      <link>/posts/2018-06/sublime-text-for-latex/</link>
+      <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-06/sublime-text-for-latex/</guid>
+      <description>Sublime Text 是一个轻量级的、跨平台的编辑器，搭配 LaTeXTools 和 TeX Live 或者 MiKTeX 使用可以编译 TeX 文件。以前你可能会觉得 LaTeX 命令很难记得住，写起来很麻烦，但是借助 Sublime Text 里面的 LaTeXTools 插件你会觉得写 TeX 文档也可以是一种享受。从我自身的经验来看，自从配置好 Sublime Text 之后，我再没回去用 TeXworks 或者 WinEdt。
+在 2014 年，我在自己博客上发布了如何使用 Sublime Text 搭建 LaTeX 编写环境，这么多年了，我的主页 发生了更迭，那篇帖子早已不见了，不过网上倒是能找到一些转载的内容。当时我将那篇帖子投稿到 LaTeX Studio，有兴趣的可以看下，传送门：Sublime Text 搭建 LaTeX 编写环境。时间过了这么多年，LaTeXTools 插件也发生了一些改变，原来的帖子感觉有点不合时代了，所以决定更新下。
+Sublime Text 3 的界面图
+
+2. 准备工作 首先，为了搭建 LaTeX 工作环境，你需要安装：
+ TeX Live 或者 MiKTeX （本文以 TeX Live 2017 为例） Sublime Text 3 Package Control (Sublime Text 插件) LaTeXTools （Sublime Text 插件） SumatraPDF 阅读器（可选，用于预览 PDF）  在上述软件/插件安装之后，你需要把 TeX Live 的 bin 目录（D:\Program Files\texlive\2017\bin\win32）以及 SumatraPDF 的路径（C:\Program Files (x86)\SumatraPDF）添加到系统环境变量（PATH）中。</description>
+    </item>
+    
+    <item>
+      <title>MongoDB unwind Operations</title>
+      <link>/posts/2018-04/unwind-operation-in-mongodb/</link>
+      <pubDate>Sun, 29 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-04/unwind-operation-in-mongodb/</guid>
+      <description>Just as the MongoDB manual pointed out:
+ unwind deconstructs an array field from the input documents to output a document for each element. Each output document is the input document with the value of the array field replaced by the element.
+ Here are two different cases in appliaction. It depends how the data is stored.
+1. M array fields × N observations case If we have K variables in each document, and the M variables are stored as array field.</description>
+    </item>
     
     <item>
       <title>Configure Visual Stuido Code as LaTeX IDE</title>
@@ -23,7 +49,7 @@
 Visual Studio Code 的界面图
 
 2. 准备工作 首先，为了搭建 LaTeX 工作环境，你需要安装：
- TeX Live 或者 MiKTeX （本文以 TeX Live 2017 为例） Visual Studio Code LaTeX Workshop （VS Code 插件） SumatraPDF 阅读器（可选，用于预览 PDF）  在上述软件/插件安装之后，你需要把 TeX Live 的 bin 目录（D:\Program Files\texlive\2017\bin\win32）以及 SumtraPDF 的路径（C:\Program Files (x86)\SumatraPDF）添加到系统环境变量（PATH）中。</description>
+ TeX Live 或者 MiKTeX （本文以 TeX Live 2017 为例） Visual Studio Code LaTeX Workshop （VS Code 插件） SumatraPDF 阅读器（可选，用于预览 PDF）  在上述软件/插件安装之后，你需要把 TeX Live 的 bin 目录（D:\Program Files\texlive\2017\bin\win32）以及 SumatraPDF 的路径（C:\Program Files (x86)\SumatraPDF）添加到系统环境变量（PATH）中。</description>
     </item>
     
     <item>
