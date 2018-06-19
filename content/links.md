@@ -17,3 +17,4 @@ author: This board shows my friends' webpage and some tools' official links
 + [Studio 3T](https://studio3t.com/): The best MongoDB GUI for me (Windows 10), free for non-commercial use.
 + [Be JSON](http://www.bejson.com/): A useful tool for json decoding.
 + [LaTeX Templates](http://www.latextemplates.com/): The so called "The best source of free quality LaTeX templates".
++ [Space between English and Chinese](https://github.com/vinta/pangu.js/): It contains some tools to add space between English and Chinese, including a VS Code extention: [vscode-pangu](https://github.com/baurine/vscode-pangu).
