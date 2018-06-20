@@ -12,6 +12,8 @@ tags:
   - Sublime Text 3
 ---
 
+> 本教程配有视频，视频下载链接：[下载地址](https://mp.weixin.qq.com/s/3FXTI3t-L_0OBWtoxfmOgQ)
+
 Sublime Text 是一个轻量级的、跨平台的编辑器，搭配 LaTeXTools 和 TeX Live 或者 MiKTeX 使用可以编译 TeX 文件。以前你可能会觉得 LaTeX 命令很难记得住，写起来很麻烦，但是借助 Sublime Text 里面的 LaTeXTools 插件你会觉得写 TeX 文档也可以是一种享受。从我自身的经验来看，自从配置好 Sublime Text 之后，我再没回去用 TeXworks 或者 WinEdt。
 
 在 2014 年，我在自己博客上发布了如何使用 Sublime Text 搭建 LaTeX 编写环境，这么多年了，我的主页 发生了更迭，那篇帖子早已不见了，不过网上倒是能找到一些转载的内容。当时我将那篇帖子投稿到 LaTeX Studio，有兴趣的可以看下，传送门：[Sublime Text 搭建 LaTeX 编写环境](http://www.latexstudio.net/archives/1169)。时间过了这么多年，LaTeXTools 插件也发生了一些改变，原来的帖子感觉有点不合时代了，所以决定更新下。

@@ -12,6 +12,9 @@ tags:
   - Visual Stuido Code
 ---
 
+> 本教程配有视频，视频下载链接：[下载地址](https://mp.weixin.qq.com/s?__biz=MzAxNjI3Mzc3Mw==&mid=2652772480&idx=1&sn=00b71ed30ce5b19019b39a86b1216e6b&chksm=801de082b76a6994288d26a8573546dfa2970824496343f754c9a81d5fedf10458433623d0cc&mpshare=1&scene=1&srcid=0620HAAqbVdiQiJipmiWIx06#rd)
+
+
 本文介绍如何配置 Visual Studio Code 作为 LaTeX 的编辑器。
 
 ## 1. 为什么用 Visual Studio Code
