@@ -1,7 +1,7 @@
 ---
-title: Cmder 的基础配置
+title: Basic Configuration of Cmder
 date: '2018-07-05'
-slug: configuration  of Cmder
+slug: configuration of Cmder
 draft: false
 author: Dongsheng Deng @
 categories:
