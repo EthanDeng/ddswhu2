@@ -36,7 +36,7 @@ Markdown Preview Enhanced 的安装非常简单，打开 VS Code 之后，在插
     font-family: "Myriad Pro","文泉驿微米黑";
 
     pre, code {
-    font-family: 'Menlo';
+        font-family: 'Menlo';
     }
 
     h1, h2, h3, h4, h5, h6 {
