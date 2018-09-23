@@ -6,30 +6,24 @@
     <description>Recent content in Markdown on Dongsheng Deng&#39;s homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Feb 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>A Plain Markdown Post</title>
-      <link>/posts/2016-02/a-plain-markdown-post/</link>
-      <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
+      <title>Markdown Preview in Visual Studio Code</title>
+      <link>/posts/2018-07/markdown-preview-in-vs-code/</link>
+      <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/2016-02/a-plain-markdown-post/</guid>
-      <description>This sample post is mainly for blogdown users. If you do not use blogdown, you can skip the first section.
-1. Markdown or R Markdown This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.</description>
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum</title>
-      <link>/posts/2015-07/short-format-of-the-post/</link>
-      <pubDate>Thu, 23 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/2015-07/short-format-of-the-post/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Quisque mattis volutpat lorem vitae feugiat.</description>
+      <guid>/posts/2018-07/markdown-preview-in-vs-code/</guid>
+      <description>介绍  Markdown Preview Enhanced 是一款为 Atom 以及 Visual Studio Code 编辑器编写的超级强大的 Markdown 插件。 这款插件意在让你拥有飘逸的 Markdown 写作体验。
+ 我们先来看下官网的效果：
+
+安装 Markdown Preview Enhanced 的安装非常简单，打开 VS Code 之后，在插件管理，搜索 Markdown Preview Enhanced 这个插件，并选择安装，安装好之后重新加载就行了。
+预览配置 我们编写 Markdown 之后，在 VS Code 右上角有一个预览的按钮，点击预览按钮之后，会弹出 Markdown 的预览界面。不过预览界面在 Windows 上的效果并不太好（主要是字体问题）。而我选择 MPE 的原因就在于它支持你自己定义预览显示，并且也支持输出 Html 或者 PDF 格式。
+根据 MPE 的文档说明，在自定义 CSS 部分，我们可以根据文档对我们的预览进行修改。下面是我自己的预览设置。
+.markdown-preview.markdown-preview { font-size: 17px; font-family: &amp;quot;Myriad Pro&amp;quot;,&amp;quot;文泉驿微米黑&amp;quot;; pre, code { font-family: &#39;Menlo&#39;; } h1, h2, h3, h4, h5, h6 { font-family: &#39;Myriad Pro&#39;,&#39;黑体&#39;; } h1{ font-size: 28px; } h2{ font-size: 25px; } h3{ font-size: 22px; } h4, h5 { font-size: 20px; } }  修改好预览设置之后，我们可以看下显示的效果：</description>
     </item>
     
   </channel>

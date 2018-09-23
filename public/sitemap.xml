@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/2018-09/summary-statistics-and-write-csv/</loc>
+    <lastmod>2018-09-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2018-07/create-ocg-in-latex/</loc>
+    <lastmod>2018-07-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2018-07/markdown-preview-in-vs-code/</loc>
+    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2018-07/configuration-of-cmder/</loc>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2018-07/python-note-setdefault-method/</loc>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2018-07/python-note-collatz-sequence/</loc>
+    <lastmod>2018-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/2018-06/sublime-text-for-latex/</loc>
     <lastmod>2018-06-03T00:00:00+00:00</lastmod>
   </url>
@@ -48,6 +78,30 @@
   </url>
   
   <url>
+    <loc>/tags/cmder/</loc>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/collatz/</loc>
+    <lastmod>2018-07-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/describe/</loc>
+    <lastmod>2018-09-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/dict/</loc>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/editor/</loc>
     <lastmod>2018-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -60,8 +114,14 @@
   </url>
   
   <url>
+    <loc>/tags/function/</loc>
+    <lastmod>2018-09-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -78,7 +138,13 @@
   
   <url>
     <loc>/categories/latex/</loc>
-    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/markdown/</loc>
+    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -101,25 +167,49 @@
   </url>
   
   <url>
+    <loc>/tags/ocg/</loc>
+    <lastmod>2018-07-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ocgx2/</loc>
+    <lastmod>2018-07-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/posts/</loc>
-    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/python/</loc>
-    <lastmod>2018-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/python/</loc>
-    <lastmod>2018-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/recursive/</loc>
+    <lastmod>2018-07-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/research/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/setdefault/</loc>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -133,8 +223,26 @@
   </url>
   
   <url>
+    <loc>/tags/summary-statistics/</loc>
+    <lastmod>2018-09-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
-    <lastmod>2018-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tools/</loc>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/tools/</loc>
+    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -145,6 +253,12 @@
   <url>
     <loc>/tags/tutorial/</loc>
     <lastmod>2017-06-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vs-code/</loc>
+    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

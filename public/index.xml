@@ -6,10 +6,91 @@
     <description>Recent content in Home on Dongsheng Deng&#39;s homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Get the Summary Statistics and Wirte it to CSV/Excel</title>
+      <link>/posts/2018-09/summary-statistics-and-write-csv/</link>
+      <pubDate>Sun, 23 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-09/summary-statistics-and-write-csv/</guid>
+      <description>1. 问题描述 在使用 Python 进行数据分析的时候，在对数据清洗完毕之后，一般我们需要对数据进行描述统计，怎么利用 Python 对数据进行基础描述统计呢？更复杂的，如何获得更多的统计量的信息？最后怎么把描述统计的表导出到本地 csv/excel 文件？
+2. 问题初探 Pandas 包自带了一个函数 Describe，它能直接获得数据的基础描述统计，例如
+import pandas as pd tlr2agonist = pd.DataFrame({&#39;Mol_Weight&#39;: [4,5,7], &#39;AsymmetricAtoms&#39;: [1, 2, 8], &#39;ChiralAtoms&#39;:[3,8,9] }) tlr2agonist.describe()  它的输出为
+Mol_Weight AsymmetricAtoms ChiralAtoms count 3.000000 3.000000 3.000000 mean 5.333333 3.666667 6.666667 std 1.527525 3.785939 3.214550 min 4.000000 1.000000 3.000000 25% 4.500000 1.500000 5.500000 50% 5.000000 2.000000 8.000000 75% 6.000000 5.000000 8.500000 max 7.000000 8.000000 9.000000  注：高分屏加上合适的字体，Sublime Text 的显示效果也非常好。</description>
+    </item>
+    
+    <item>
+      <title>Create and Using OCG in LaTeX</title>
+      <link>/posts/2018-07/create-ocg-in-latex/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-07/create-ocg-in-latex/</guid>
+      <description>1. 最初的设想 在学习 Python 的时候，看到一个习题集，每个习题的后面是答案，而网址在每个习题的下面提供了一个点击的按钮，当点击的时候可以显示答案，当时我就想，LaTeX 的宏包有没有能够实现这个功能的？顺藤摸瓜找到了 ocg 包，然后其进化版 ocgx，以及最终进化版 ocgx2。
+OCG（Optional Content Groups），暂译为可选内容组，指的是在 PDF 中嵌套可选可视的内容。比如加入图层（layer），在查看的时候，通过不同的图层搭配可以显示不同的效果。
+2. ocgx2 包介绍 ocgx2 是 Alexander Grahn 从 2015 年开始开发并维护至今的一个用于创建 PDF 图层，管理 ocg 的包，它的作用是想完全替换掉目前 Paul Gaborit 的 ocgx 包和 Werner Moshammer 的 ocg-p 包，因为后两者都有自己的局限性。相比初代 ocg，ocgx 和 ocg-p 包，ocgx2 完全实现了这几个包的功能，并且解决了编译引擎上的局限，现在 ocgx2 支持
+ LaTeX ⇒ dvips ⇒ ps2pdf/Distiller (Xe)LaTeX ⇒ (x)dvipdfmx pdfLaTeX, LuaLaTeX  并且 ocgx2 改善了在处理 PDF 图层时的性能，也提高与其他包同时加载时的兼容性。更为重要的，ocgx2 新增加图层跨页功能，之前宏包没法跨页。
+3. ocgx2 宏包设定 3.1 为 ocg 对象链接添加颜色 \usepackage{hyperref} % do NOT set [ocgcolorlinks] here!</description>
+    </item>
+    
+    <item>
+      <title>Markdown Preview in Visual Studio Code</title>
+      <link>/posts/2018-07/markdown-preview-in-vs-code/</link>
+      <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-07/markdown-preview-in-vs-code/</guid>
+      <description>介绍  Markdown Preview Enhanced 是一款为 Atom 以及 Visual Studio Code 编辑器编写的超级强大的 Markdown 插件。 这款插件意在让你拥有飘逸的 Markdown 写作体验。
+ 我们先来看下官网的效果：
+
+安装 Markdown Preview Enhanced 的安装非常简单，打开 VS Code 之后，在插件管理，搜索 Markdown Preview Enhanced 这个插件，并选择安装，安装好之后重新加载就行了。
+预览配置 我们编写 Markdown 之后，在 VS Code 右上角有一个预览的按钮，点击预览按钮之后，会弹出 Markdown 的预览界面。不过预览界面在 Windows 上的效果并不太好（主要是字体问题）。而我选择 MPE 的原因就在于它支持你自己定义预览显示，并且也支持输出 Html 或者 PDF 格式。
+根据 MPE 的文档说明，在自定义 CSS 部分，我们可以根据文档对我们的预览进行修改。下面是我自己的预览设置。
+.markdown-preview.markdown-preview { font-size: 17px; font-family: &amp;quot;Myriad Pro&amp;quot;,&amp;quot;文泉驿微米黑&amp;quot;; pre, code { font-family: &#39;Menlo&#39;; } h1, h2, h3, h4, h5, h6 { font-family: &#39;Myriad Pro&#39;,&#39;黑体&#39;; } h1{ font-size: 28px; } h2{ font-size: 25px; } h3{ font-size: 22px; } h4, h5 { font-size: 20px; } }  修改好预览设置之后，我们可以看下显示的效果：</description>
+    </item>
+    
+    <item>
+      <title>Basic Configuration of Cmder</title>
+      <link>/posts/2018-07/configuration-of-cmder/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-07/configuration-of-cmder/</guid>
+      <description>1. 让 Cmder 显示中文 打开 Cmder 设置选项，找到 Startup-Environment，在右边添加下面代码
+set LANG=zh_CN.UTF-8  2. 修改 Cmder 默认打开目录 打开 Cmder 设置选项，找到 Startup-Tasks，将右边的 cmd::Cmder as Admin 任务运行内容修改为
+*-new_console:d:C:\Users\Ethan cmd /k &amp;quot;&amp;quot;%ConEmuDir%\..\init.bat&amp;quot; &amp;quot;  其中将 C:\Users\Ethan 替换为自己想要的启动目录。
+然后类似的将 cmd::Cmder 任务的运行内容替换为
+-new_console:d:C:\Users\Ethan cmd /k &amp;quot;&amp;quot;%ConEmuDir%\..\init.bat&amp;quot; &amp;quot;  3. 修改命令提示符 Cmder 默认的命令提示符是 λ，如果想改成常见的 $，只需要找到 Cmder 的安装目录下的 vendor 目录（我的是 C:\Program Files\cmder\vendor），然后将 clink.lua 文件中 λ 修改为 $ 即可。具体的，可以在 clink.lua 文件中搜索 λ（大约在第 43 行）。修改之后 43 行代码为
+local lambda = &amp;quot;$&amp;quot;  4.</description>
+    </item>
+    
+    <item>
+      <title>Python Notes 2 - setdefault Method</title>
+      <link>/posts/2018-07/python-note-setdefault-method/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-07/python-note-setdefault-method/</guid>
+      <description>1. 字典中 setdefault 方法怎么理解？ 1.1 问题描述 参考菜鸟教程中 setdefault 的描述：Python3 字典 setdefault() 方法
+ Python 字典 setdefault() 方法和 get() 方法类似, 如果键不已经存在于字典中，将会添加键并将值设为默认值。
+ 字典的 setdefault 方法与字典赋值有什么区别？
+1.2 语法区别 setdefault() 方法的语法：
+dict.setdefault(key, default=None)  直接赋值方法：
+dict[&#39;key&#39;] = value  1.3 理解 setdefault 方法 # 字典的 setdefault 方法的用途是给一个字典某个 key 指定默认的 value # 在 key 不存在的时候，会新建 key-value 对 # 但是当 key 存在的时候，setdefault 不会更改这个 key 所对应的 value。 spam = {&#39;Name&#39;: &#39;Runoob&#39;, &#39;Age&#39;: 7} spam.setdefault(&#39;Age&#39;,&#39;25&#39;) spam.setdefault(&#39;Sex&#39;, &#39;NA&#39;) spam.</description>
+    </item>
+    
+    <item>
+      <title>Python Notes 1 - Collatz Sequence</title>
+      <link>/posts/2018-07/python-note-collatz-sequence/</link>
+      <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-07/python-note-collatz-sequence/</guid>
+      <description>1. 定义函数实现循环调用 1.1 问题描述 &amp;mdash; Collatz 序列 编写一个名为 collatz() 的函数，它有一个名为 number 的参数。如果参数是偶数，那么 collatz() 返回 number//2，并返回该值。如果 number 为奇数，collatz() 打印并返回 3*number+1。
+然后编写一个程序，让用户输入一个整数，并不断对这个数调用 collatz()，直到函数返回值为 1。
+  记得将 input() 的返回值用 int() 函数转为一个整数，否则它会是一个字符串。 number %2 == 0，整数 number 就是偶数，如果 number %2 == 1，它就是奇数。   这个程序的输出结果应该像如下：
+Enter number: 3 10 5 16 8 4 2 1  1.2 解决方法 思路：利用 while 进行判断，让 collatz 自己循环调用自己。(代码下载)
+def collatz(number): if number % 2 == 0: print(number // 2) return number // 2 else: print(3*number + 1) return 3*number + 1 n = input(&amp;quot;Enter number: \n&amp;quot;) while n !</description>
+    </item>
     
     <item>
       <title>Configure Sublime Text 3 as LaTeX IDE</title>
@@ -17,7 +98,8 @@
       <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/2018-06/sublime-text-for-latex/</guid>
-      <description>Sublime Text 是一个轻量级的、跨平台的编辑器，搭配 LaTeXTools 和 TeX Live 或者 MiKTeX 使用可以编译 TeX 文件。以前你可能会觉得 LaTeX 命令很难记得住，写起来很麻烦，但是借助 Sublime Text 里面的 LaTeXTools 插件你会觉得写 TeX 文档也可以是一种享受。从我自身的经验来看，自从配置好 Sublime Text 之后，我再没回去用 TeXworks 或者 WinEdt。
+      <description>本教程配有视频，视频下载链接：下载地址
+ Sublime Text 是一个轻量级的、跨平台的编辑器，搭配 LaTeXTools 和 TeX Live 或者 MiKTeX 使用可以编译 TeX 文件。以前你可能会觉得 LaTeX 命令很难记得住，写起来很麻烦，但是借助 Sublime Text 里面的 LaTeXTools 插件你会觉得写 TeX 文档也可以是一种享受。从我自身的经验来看，自从配置好 Sublime Text 之后，我再没回去用 TeXworks 或者 WinEdt。
 在 2014 年，我在自己博客上发布了如何使用 Sublime Text 搭建 LaTeX 编写环境，这么多年了，我的主页 发生了更迭，那篇帖子早已不见了，不过网上倒是能找到一些转载的内容。当时我将那篇帖子投稿到 LaTeX Studio，有兴趣的可以看下，传送门：Sublime Text 搭建 LaTeX 编写环境。时间过了这么多年，LaTeXTools 插件也发生了一些改变，原来的帖子感觉有点不合时代了，所以决定更新下。
 Sublime Text 3 的界面图
 
@@ -43,7 +125,8 @@ Sublime Text 3 的界面图
       <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/2018-04/vs-code-for-latex/</guid>
-      <description>本文介绍如何配置 Visual Studio Code 作为 LaTeX 的编辑器。
+      <description>本教程配有视频，视频下载链接：下载地址
+ 本文介绍如何配置 Visual Studio Code 作为 LaTeX 的编辑器。
 1. 为什么用 Visual Studio Code Visual Studio Code（以下简称 VS Code） 是微软推出的一个编辑器，它的优点你可以百度一下，这里不赘述。对我来说，它最有吸引力的当属在 Windows 系统，它对于中英文字体的渲染。如果你原来用过其他编辑器，你就知道在普通屏幕上，中英文的显示效果简直是灾难。我原来因为编辑器的中文显示（当然还有 Terminal 的吸引力）一度想买 Mac，当然最后因为对性能和颜值的追求并不匹配我的财力，加上 Windows 上有些软件不能舍弃，最后作罢。
 注：高分屏加上合适的字体，Sublime Text 的显示效果也非常好。
 Visual Studio Code 的界面图
@@ -107,7 +190,7 @@ mongod --dbpath C:\MongoDB\Server\3.6\data\db  2. start MongDB as service  remov
       
       <guid>/research/</guid>
       <description>Welcome to the board of research, here are some records of my research road.
-Paper  Dongsheng Deng. Inflation policy under regime instability, 2012. (paper, slides) Dongsheng Deng, Rongwei Chu. Relationship between migrants’ remittance and life satisfaction, 2014. (paper) Zhao Chen, Dongsheng Deng. Risks and investor’s risk awareness in online P2P lending: evidence from transactions of lending platforms, 2017. (paper, slides)  Conference  The Third China Financial Forum, Shanghai University of Finance and Economics, Shanghai, November 2017.</description>
+Paper  Dongsheng Deng. Inflation Policy under Regime Instability, 2012. (paper, slides) Dongsheng Deng, Rongwei Chu. Relationship between Migrants’ Remittance and Life Satisfaction, 2014. (paper) Zhao Chen, Dongsheng Deng. The Risk of Internet Finance and Investor’s Risk Awareness in Online P2P Lending: Evidence from Transactions of Lending Platforms, 2017. (paper, slides)  Conference  The Third China Financial Forum, Shanghai University of Finance and Economics, Shanghai, November 2017.</description>
     </item>
     
     <item>
@@ -117,7 +200,7 @@ Paper  Dongsheng Deng. Inflation policy under regime instability, 2012. (paper, 
       
       <guid>/resource/</guid>
       <description>Welcome to the board of resource, here are some useful tools and tutorials.
-Stata  Stata Learning Module Stata Class Notes  Python  DownloadHelper.py  LaTeX  ElegantLaTeX Book Templates: Designed by Dongsheng Deng and Liam Huang. Metropolis: A very beautiful and modern beamer theme. (Github, Download, Manual) LaTeX Beamer tutorial. (Beamer tutorial 2015, Beamer tutorial 2017) LaTeX graphic tutorial. (graphic tutorial)  Design  I designed the official logo of the Institute for Advanced Study of Wuhan University.</description>
+Stata  Stata Learning Module Stata Class Notes  Python  DownloadHelper.py  LaTeX  ElegantLaTeX Book Templates: Designed by Dongsheng Deng and Liam Huang. Metropolis: A very beautiful and modern beamer theme. (Github, Download, Manual) LaTeX Beamer Tutorial. (Beamer tutorial 2015, Beamer tutorial 2017) LaTeX Graphic Tutorial. (Graphic tutorial) Video Tutorial: Configure Sublime Text 3 as LaTeX IDE Video Tutorial: Configure VS Code as LaTeX IDE  Design  I designed the official logo of the Institute for Advanced Study of Wuhan University.</description>
     </item>
     
     <item>
@@ -126,7 +209,7 @@ Stata  Stata Learning Module Stata Class Notes  Python  DownloadHelper.py  LaTeX
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/travel/</guid>
-      <description>Travel Records  Social practice of Wuhan University, July 2011, Suzhou, China. Summer camp of Fudan University, August 2012, Shanghai ,China. Ancient town of Xitang, March 2014, Jiaxing, Zhejiang, China. The Summer Palace, July 2015, Beijing, China. Visit friends and go sightseeing, Apirl 2017, Berlin, Germany. Sanya, *January 2018*，Hainan, China.  Photo Album  Graducation Year in Wuhan University (2013)</description>
+      <description>Travel Records  Social practice of Wuhan University, July 2011, Suzhou, China. Summer camp of Fudan University, August 2012, Shanghai ,China. Ancient town of Xitang, March 2014, Jiaxing, Zhejiang, China. The Summer Palace, July 2015, Beijing, China. Visit friends and go sightseeing, Apirl 2017, Berlin, Germany. Sanya, January 2018, Hainan, China.  Photo Album  Graducation Year in Wuhan University (2013)</description>
     </item>
     
     <item>
@@ -135,7 +218,7 @@ Stata  Stata Learning Module Stata Class Notes  Python  DownloadHelper.py  LaTeX
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/links/</guid>
-      <description>My Friends  My Blog: My blog website. Xin Ye: My undergradute roommate. Ph.D. candidate from the Department of Mathematics, Purdue University. Liam Huang: Coauthor of the ElegantLaTeX Note/Book Templates, programmer, TeXer. Murong Wang: Member of the ElegantLaTeX program, data scientist. LaTeX Studio: Palace for LaTeX user, maintained by ChinaTeX.  Tool Links  Everything: To locate files and folders by name instantly. Studio 3T: The best MongoDB GUI for me (Windows 10), free for non-commercial use.</description>
+      <description>My Friends  My Blog: My blog homepage. Xin Ye: My undergradute roommate. Ph.D. candidate from the Department of Mathematics, Purdue University. Liam Huang: Coauthor of the ElegantLaTeX Note/Book Templates, programmer, TeXer. Murong Wang: Member of the ElegantLaTeX program, data scientist. LaTeX Studio: Palace for LaTeX user, maintained by ChinaTeX.  Tool Links  Everything: To locate files and folders by name instantly. Studio 3T: The best MongoDB GUI for me (Windows 10), free for non-commercial use.</description>
     </item>
     
     <item>

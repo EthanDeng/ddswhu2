@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Dongsheng Deng&#39;s homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cmder</title>
+      <link>/tags/cmder/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cmder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Collatz</title>
+      <link>/tags/collatz/</link>
+      <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/collatz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Describe</title>
+      <link>/tags/describe/</link>
+      <pubDate>Sun, 23 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/describe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dict</title>
+      <link>/tags/dict/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dict/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Editor</title>
@@ -17,6 +53,15 @@
       <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Function</title>
+      <link>/tags/function/</link>
+      <pubDate>Sun, 23 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/function/</guid>
       <description></description>
     </item>
     
@@ -39,6 +84,15 @@
     </item>
     
     <item>
+      <title>Markdown</title>
+      <link>/tags/markdown/</link>
+      <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>MongoDB</title>
       <link>/tags/mongodb/</link>
       <pubDate>Sun, 29 Apr 2018 00:00:00 +0000</pubDate>
@@ -48,11 +102,47 @@
     </item>
     
     <item>
+      <title>Ocg</title>
+      <link>/tags/ocg/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ocg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ocgx2</title>
+      <link>/tags/ocgx2/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ocgx2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Python</title>
       <link>/tags/python/</link>
-      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recursive</title>
+      <link>/tags/recursive/</link>
+      <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/recursive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Setdefault</title>
+      <link>/tags/setdefault/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/setdefault/</guid>
       <description></description>
     </item>
     
@@ -66,11 +156,38 @@
     </item>
     
     <item>
+      <title>Summary Statistics</title>
+      <link>/tags/summary-statistics/</link>
+      <pubDate>Sun, 23 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/summary-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>/tags/tools/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tutorial</title>
       <link>/tags/tutorial/</link>
       <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VS Code</title>
+      <link>/tags/vs-code/</link>
+      <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/vs-code/</guid>
       <description></description>
     </item>
     
