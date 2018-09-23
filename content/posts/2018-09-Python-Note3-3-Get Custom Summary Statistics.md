@@ -20,24 +20,24 @@ tags:
 Pandas 包自带了一个函数 describe，它能直接获得数据的基础描述统计，例如 
 ```python
 import pandas as pd
-tlr2agonist = pd.DataFrame({'Mol_Weight':      [4, 5, 7], 
-                            'AsymmetricAtoms': [1, 2, 8],
-                            'ChiralAtoms':     [3, 8, 9]
+p2p = pd.DataFrame({'Interest': [4, 5, 7], 
+                        'term': [1, 2, 8],
+                      'volume': [3, 8, 9]
                   })
-tlr2agonist.describe()
+p2p.describe()
 ```
 它的输出为
 
 ```python
-         Mol_Weight  AsymmetricAtoms      ChiralAtoms
-count      3.000000         3.000000         3.000000
-mean       5.333333         3.666667         6.666667
-std        1.527525         3.785939         3.214550
-min        4.000000         1.000000         3.000000
-25%        4.500000         1.500000         5.500000
-50%        5.000000         2.000000         8.000000
-75%        6.000000         5.000000         8.500000
-max        7.000000         8.000000         9.000000
+         interest       term       volume
+count    3.000000    3.000000    3.000000
+mean     5.333333    3.666667    6.666667
+std      1.527525    3.785939    3.214550
+min      4.000000    1.000000    3.000000
+25%      4.500000    1.500000    5.500000
+50%      5.000000    2.000000    8.000000
+75%      6.000000    5.000000    8.500000
+max      7.000000    8.000000    9.000000
 ```
 
 describe 结果看起来不错，但是当我们想要峰度（kurtosis）和偏度（skewness） 的时候，好像 describe 函数并不方便。其实 pandas 里面自带峰度偏度的计算公式，
@@ -64,23 +64,23 @@ def describe(df, stats):
 其中第一个参数传入的是需要进行描述统计的 data frame，而第二个参数是指相较于 describe 需要补充的统计量的列表，比如峰度（kurt），偏度（skew）等，更多统计量信息参考 [pandas](http://pandas.pydata.org/pandas-docs/stable/api.html#id39)。示例
 
 ```python
-describe(tlr2agonist, ['kurt', 'skew'])
+describe(p2p, ['kurt', 'skew'])
 ```
 此时输出结果为 
 ```python
-       Mol_Weight  AsymmetricAtoms    ChiralAtoms
-----------------------------------------------------
-count    3.000000         3.000000       3.000000
-mean     5.333333         3.666667       6.666667
-std      1.527525         3.785939       3.214550
-min      4.000000         1.000000       3.000000
-25%      4.500000         1.500000       5.500000
-50%      5.000000         2.000000       8.000000
-75%      6.000000         5.000000       8.500000
-max      7.000000         8.000000       9.000000
-----------------------------------------------------
-kurt        NaN             NaN             NaN
-skew     0.935220         1.597097      -1.545393
+        interest        term      volume
+----------------------------------------
+count   3.000000    3.000000    3.000000
+mean    5.333333    3.666667    6.666667
+std     1.527525    3.785939    3.214550
+min     4.000000    1.000000    3.000000
+25%     4.500000    1.500000    5.500000
+50%     5.000000    2.000000    8.000000
+75%     6.000000    5.000000    8.500000
+max     7.000000    8.000000    9.000000
+----------------------------------------
+kurt         NaN         NaN         NaN
+skew    0.935220    1.597097    1.545393
 ```
 
 ## 4. 扩展
@@ -92,14 +92,14 @@ skew     0.935220         1.597097      -1.545393
 ```python
 import pandas as pd
 
-tlr2agonist = pd.DataFrame({'Mol_Weight':      [4, 5, 7], 
-                            'AsymmetricAtoms': [1, 2, 8],
-                            'ChiralAtoms':     [3, 8, 9]
+p2p = pd.DataFrame({'Interest': [4, 5, 7], 
+                        'term': [1, 2, 8],
+                      'volume': [3, 8, 9]
                   })
 
-tlr2antagonist = pd.DataFrame({'Mol_Weight':      [8, 5, 9], 
-                               'AsymmetricAtoms': [1, 2, 3],
-                               'ChiralAtoms':     [7, 8, 9]
+p2pr = pd.DataFrame({'interest': [8, 5, 9], 
+                         'term': [1, 2, 3],
+                       'volume': [7, 8, 9]
                   })
 
 
@@ -107,7 +107,7 @@ def describe(df, stats):
     d = df.describe()
     return d.append(df.reindex(d.columns, axis="columns").agg(stats))
 
-datasets = ['tlr2agonist','tlr2antagonist']
+datasets = ['p2p','p2pr']
 
 final_df = pd.DataFrame()
 
@@ -120,28 +120,28 @@ for dataset_s in datasets: // 对子数据集进行循环
 最终的输出结果为
 
 ```python
-       Mol_Weight  AsymmetricAtoms  ChiralAtoms         dataset
-count    3.000000         3.000000     3.000000     tlr2agonist
-mean     5.333333         3.666667     6.666667     tlr2agonist
-std      1.527525         3.785939     3.214550     tlr2agonist
-min      4.000000         1.000000     3.000000     tlr2agonist
-25%      4.500000         1.500000     5.500000     tlr2agonist
-50%      5.000000         2.000000     8.000000     tlr2agonist
-75%      6.000000         5.000000     8.500000     tlr2agonist
-max      7.000000         8.000000     9.000000     tlr2agonist
-skew     0.935220         1.597097    -1.545393     tlr2agonist
-kurt          NaN              NaN          NaN     tlr2agonist
----------------------------------------------------------------
-count    3.000000         3.000000     3.000000  tlr2antagonist
-mean     7.333333         2.000000     8.000000  tlr2antagonist
-std      2.081666         1.000000     1.000000  tlr2antagonist
-min      5.000000         1.000000     7.000000  tlr2antagonist
-25%      6.500000         1.500000     7.500000  tlr2antagonist
-50%      8.000000         2.000000     8.000000  tlr2antagonist
-75%      8.500000         2.500000     8.500000  tlr2antagonist
-max      9.000000         3.000000     9.000000  tlr2antagonist
-skew    -1.293343         0.000000     0.000000  tlr2antagonist
-kurt          NaN              NaN          NaN  tlr2antagonist
+         interest        term       volume  dataset
+count    3.000000    3.000000     3.000000      p2p
+mean     5.333333    3.666667     6.666667      p2p
+std      1.527525    3.785939     3.214550      p2p
+min      4.000000    1.000000     3.000000      p2p
+25%      4.500000    1.500000     5.500000      p2p
+50%      5.000000    2.000000     8.000000      p2p
+75%      6.000000    5.000000     8.500000      p2p
+max      7.000000    8.000000     9.000000      p2p
+skew     0.935220    1.597097    -1.545393      p2p
+kurt          NaN         NaN          NaN      p2p
+---------------------------------------------------
+count    3.000000    3.000000     3.000000     p2pr
+mean     7.333333    2.000000     8.000000     p2pr
+std      2.081666    1.000000     1.000000     p2pr
+min      5.000000    1.000000     7.000000     p2pr
+25%      6.500000    1.500000     7.500000     p2pr
+50%      8.000000    2.000000     8.000000     p2pr
+75%      8.500000    2.500000     8.500000     p2pr
+max      9.000000    3.000000     9.000000     p2pr
+skew    -1.293343    0.000000     0.000000     p2pr
+kurt          NaN         NaN          NaN     p2pr
 ```
 
 ## 5. 将数据写出到 csv
