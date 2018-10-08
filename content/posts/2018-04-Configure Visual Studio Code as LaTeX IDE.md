@@ -15,7 +15,8 @@ tags:
 > 本教程配有视频，视频下载链接：[下载地址](https://mp.weixin.qq.com/s?__biz=MzAxNjI3Mzc3Mw==&mid=2652772480&idx=1&sn=00b71ed30ce5b19019b39a86b1216e6b&chksm=801de082b76a6994288d26a8573546dfa2970824496343f754c9a81d5fedf10458433623d0cc&mpshare=1&scene=1&srcid=0620HAAqbVdiQiJipmiWIx06#rd)
 
 
-本文介绍如何配置 Visual Studio Code 作为 LaTeX 的编辑器。
+本文介绍如何配置 Visual Studio Code 作为 LaTeX 的编辑器。最新 PDF 版本[下载](/posts/archive/vscode.pdf)。另外，如
+果你对 Sublime Text 感兴趣的话，可以参考 [Sublime Text 配置简介](https://ddswhu.me/posts/2018-06/sublime-text-for-latex/)。
 
 ## 1. 为什么用 Visual Studio Code
 Visual Studio Code（以下简称 VS Code） 是微软推出的一个编辑器，它的优点你可以百度一下，这里不赘述。对我来说，它最有吸引力的当属在 Windows 系统，它对于中英文字体的渲染。如果你原来用过其他编辑器，你就知道在普通屏幕上，中英文的显示效果简直是灾难。我原来因为编辑器的中文显示（当然还有 Terminal 的吸引力）一度想买 Mac，当然最后因为对性能和颜值的追求并不匹配我的财力，加上 Windows 上有些软件不能舍弃，最后作罢。
