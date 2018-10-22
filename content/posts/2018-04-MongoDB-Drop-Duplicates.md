@@ -1,6 +1,6 @@
 ---
 title: Remove Duplicates in MongoDB
-date: '2018-04-27'
+date: '2018-10-21'
 slug: drop duplicates in mongodb
 draft: false
 author: Dongsheng Deng @
