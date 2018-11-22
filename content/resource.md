@@ -17,6 +17,7 @@ Welcome to the board of resource, here are some useful tools and tutorials.
 
 ## LaTeX 
 + [ElegantLaTeX Book Templates](/resource/LaTeX/elegantbook v2.30.zip): Designed by [Dongsheng Deng](https://ddswhu.me/) and [Liam Huang](https://liam0205.me/), **Please** install the fonts [download](/resource/LaTeX/fonts_2.30.zip).
++ [ElengatLaTeX Paper Templates](/resource/LaTeX/elegantpaper.rar): Designed by [Dongsheng Deng](https://ddswhu.me/).
 + [Metropolis](https://github.com/matze/mtheme): A very beautiful and modern beamer theme. ([Github](https://github.com/matze/mtheme), [Download](/resource/LaTeX/mtheme-master.zip), [Manual](http://mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf))
 + LaTeX Beamer Tutorial. ([Beamer tutorial 2015](/resource/LaTeX/beamer_tutorial_2015.pdf), [Beamer tutorial 2017](/resource/LaTeX/beamer_tutorial_2017.pdf))
 + LaTeX Graphic Tutorial. ([Graphic tutorial](/resource/LaTeX/graphic_tutorial_2015.pdf))
