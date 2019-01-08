@@ -16,7 +16,7 @@ Welcome to the board of resource, here are some useful tools and tutorials.
 + [DownloadHelper.py](/resource/Python/dlh/DownloadHelper.py)
 
 ## LaTeX 
-+ [ElegantLaTeX Book Template](/resource/LaTeX/elegantbook v3.02.rar): [User Guide](/resource/LaTeX/guide.pdf)
++ [ElegantLaTeX Book Template](/resource/LaTeX/elegantbook v3.03.zip): [User Guide](/resource/LaTeX/guide_book.pdf)
 + [ElegantLaTeX Note Template](/resource/LaTeX/ElegantNote 2.00.zip): [User Guide](/resource/LaTeX/guide_note.pdf)
 + [ElengatLaTeX Paper Template](/resource/LaTeX/elegantpaper.rar): [User Guide](/resource/LaTeX/ElegantPaper_Guide.pdf), [中文版本](/resource/LaTeX/elegantpaper_CN.rar), [用户文档（中文）](/resource/LaTeX/ElegantPaper_CN_Guide.pdf).
 + [Erlangen Fudan](/resource/LaTeX/Erlangen_Fudan.zip): [Example](/resource/LaTeX/Erlangen_Fudan.pdf).
