@@ -18,7 +18,7 @@ Welcome to the board of resource, here are some useful tools and tutorials.
 ## LaTeX 
 + [ElegantLaTeX Book Template](/resource/LaTeX/elegantbook v3.03.zip): [User Guide](/resource/LaTeX/guide_book.pdf)
 + [ElegantLaTeX Note Template](/resource/LaTeX/ElegantNote 2.00.zip): [User Guide](/resource/LaTeX/guide_note.pdf)
-+ [ElengatLaTeX Paper Template](/resource/LaTeX/elegantpaper.rar): [User Guide](/resource/LaTeX/ElegantPaper_Guide.pdf), [中文版本](/resource/LaTeX/elegantpaper_CN.rar), [用户文档（中文）](/resource/LaTeX/ElegantPaper_CN_Guide.pdf).
++ [ElengatLaTeX Paper Template](/resource/LaTeX/ElegantPaper v0.02.zip): [Github](https://github.com/EthanDeng/ElegantPaper), [CTAN](https://ctan.org/pkg/elegantpaper).
 + [Erlangen Fudan](/resource/LaTeX/Erlangen_Fudan.zip): [Example](/resource/LaTeX/Erlangen_Fudan.pdf).
 + [Metropolis](https://github.com/matze/mtheme): A very beautiful and modern beamer theme. ([Github](https://github.com/matze/mtheme), [Download](/resource/LaTeX/mtheme-master.zip), [Manual](http://mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf))
 + LaTeX Beamer Tutorial. ([Beamer tutorial 2015](/resource/LaTeX/beamer_tutorial_2015.pdf), [Beamer tutorial 2017](/resource/LaTeX/beamer_tutorial_2017.pdf))
