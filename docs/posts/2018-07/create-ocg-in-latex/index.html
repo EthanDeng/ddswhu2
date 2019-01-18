@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create and Using OCG in LaTeX | Dongsheng Deng&#39;s homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f3eaf531519275f71e2dea3ffbd25d5e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/research/">Research</a></li>
+      
+      <li><a href="/resource/">Resource</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="/travel/">Travel</a></li>
+      
+      <li><a href="/links/">Links</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+<div class="article-meta">
+<h1><span class="title">Create and Using OCG in LaTeX</span></h1>
+ Dongsheng Deng @
+2018/07/24
+</div>
+
+<main>
+
+
+<h2 id="1-最初的设想">1. 最初的设想</h2>
+
+<p>在学习 Python 的时候，看到一个习题集，每个习题的后面是答案，而网址在每个习题的下面提供了一个点击的按钮，当点击的时候可以显示答案，当时我就想，LaTeX 的宏包有没有能够实现这个功能的？顺藤摸瓜找到了 ocg 包，然后其进化版 ocgx，以及最终进化版 ocgx2。</p>
+
+<p>OCG（Optional Content Groups），暂译为可选内容组，指的是在 PDF 中嵌套可选可视的内容。比如加入图层（layer），在查看的时候，通过不同的图层搭配可以显示不同的效果。</p>
+
+<h2 id="2-ocgx2-包介绍">2. ocgx2 包介绍</h2>
+
+<p><a href="https://gitlab.com/agrahn/ocgx2">ocgx2</a> 是 Alexander Grahn 从 2015 年开始开发并维护至今的一个用于创建 PDF 图层，管理 ocg 的包，它的作用是想完全替换掉目前 Paul Gaborit 的 ocgx 包和 Werner Moshammer 的 ocg-p 包，因为后两者都有自己的局限性。相比初代 ocg，ocgx 和 ocg-p 包，ocgx2 完全实现了这几个包的功能，并且解决了编译引擎上的局限，现在 ocgx2 支持</p>
+
+<ul>
+<li>LaTeX ⇒ dvips ⇒ ps2pdf/Distiller</li>
+<li>(Xe)LaTeX ⇒ (x)dvipdfmx</li>
+<li>pdfLaTeX, LuaLaTeX</li>
+</ul>
+
+<p>并且 ocgx2 改善了在处理 PDF 图层时的性能，也提高与其他包同时加载时的兼容性。更为重要的，ocgx2 新增加图层跨页功能，之前宏包没法跨页。</p>
+
+<h2 id="3-ocgx2-宏包设定">3. ocgx2 宏包设定</h2>
+
+<h3 id="3-1-为-ocg-对象链接添加颜色">3.1 为 ocg 对象链接添加颜色</h3>
+
+<pre><code class="language-tex">\usepackage{hyperref}  % do NOT set [ocgcolorlinks] here!
+\usepackage[ocgcolorlinks]{ocgx2}
+</code></pre>
+
+<h3 id="3-2-为-tikz-提供图层支持">3.2 为 TikZ 提供图层支持</h3>
+
+<pre><code class="language-tex">\usepackage[tikz]{ocgx2}
+</code></pre>
+
+<h2 id="4-ocgx2-宏包使用">4. ocgx2 宏包使用</h2>
+
+<h3 id="4-1-ocg-定义方法">4.1 ocg 定义方法</h3>
+
+<p>我们是通过 ocg 环境定义一个 ocg 图层的，语法如下</p>
+
+<pre><code class="language-tex">\begin{ocg}[&lt;options&gt;]{&lt;layer name&gt;}{&lt;layer id&gt;}{&lt;initial visibility&gt;}
+  ... material to be put on a PDF layer ...
+\end{ocg}
+</code></pre>
+
+<p>其中 <code>options</code> 一般不填，想了解的可以看下 ocgx2 官网对这部分的解释。<code>layer name</code> 是第一个必选项，意为当前创建的 ocg 的图层名字，在之后并不会调用，在阅读 PDF 的时候能够用于分辨不同图层。<code>layer id</code> 是为当前 ocg 创建的 ocg 的 id（唯一识别）。不同的 ocg 的 id 都应该不一样。<code>initial visibility</code> 指的是为当前 ocg 指定默认的可见性。1 为可见（visible），0 为不可见（invisible）。</p>
+
+<h3 id="4-2-ocg-图层间切换">4.2 ocg 图层间切换</h3>
+
+<p>ocgx2 提供了 4 个核心命令用于切换 ocg 图层</p>
+
+<pre><code class="language-tex">\switchocg{待切换的图层 id，逗号分隔}{&lt;link text&gt;}
+\showocg{待显示的图层 id，逗号分隔}{&lt;link text&gt;}
+\hideocg{待隐藏的图层 id，逗号分隔}{&lt;link text&gt;}
+\actionsocg{待切换的图层（X）}{待显示的图层（Y）}{待隐藏的图层（Z）}{&lt;link text&gt;}
+</code></pre>
+
+<p>其中 <code>link text</code> 是一段文字，在 PDF 的效果是，当鼠标点击 <code>link text</code> 的时候，图层会进行切换，显示或者隐藏。图层 id 可以为多个，并用英文分号隔开即可。需要注意的是 <code>\actionsocg</code> 是为 <code>link text</code> 指定一系列动作，即在点击 <code>link text</code> 的时候，<strong>同时</strong> X 的所有图层状态切换（<code>可见</code> &lt;-&gt; <code>不可见</code>），Y 所有图层全部变为 <code>可见</code>，Z 所有图层全部变为 <code>不可见</code>。</p>
+
+<p>一个简单的示例如下：</p>
+
+<pre><code class="language-tex">\switchocg{ocg1}{\textbf{Show answer}}
+
+\begin{ocg}{Python Code}{ocg1}{1}
+\begin{verbatim}
+import requests
+url = 'www.example.com'
+reponse = request.get(url=url).content
+print(response)
+\end{verbatim}
+\end{ocg}
+</code></pre>
+
+<p>在点击 <code>Show answer</code> 之后，下面的这段代码就能切换显示状态。</p>
+
+<h3 id="4-3-与-tikz-结合使用">4.3 与 TikZ 结合使用</h3>
+
+<p>为了让 ocg 与 TikZ 结合非常简单，只需要在 TikZ 环境中，用 ocg 环境包裹 TikZ 绘图命令即可。比如</p>
+
+<pre><code class="language-tex">\begin{tikzpicture}[node distance=3cm, state/.style={fill=green!20},auto]
+
+\begin{ocg}{grid}{ocgridid}{1}
+\draw[black!20] (-1,-1) grid (4,2);
+\end{ocg}
+
+\begin{ocg}{states}{ocstatesid}{1}
+\node[state] (q_a) {$q_a$};
+\node[state] (q_b) [right of=q_a] {$q_b$};
+\end{ocg}
+
+\begin{ocg}{edges}{ocedgesid}{1}
+\path[-&gt;]
+(q_a) edge node {0} (q_b)
+edge [loop above] node {0} ()
+(q_b) edge [loop above] node {1} ();
+\end{ocg}
+
+\end{tikzpicture}
+</code></pre>
+
+<p>最后，这里给出一个效果图（<a href="/posts/archive/ocg.tex">源码下载</a>，<a href="/posts/archive/ocg.pdf">PDF 下载</a>）：</p>
+
+<p><center><img src='/posts/image/ocg.gif' width=480px/></center></p>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="https://gitlab.com/agrahn/ocgx2">ocgx2: LaTeX package for creating PDF Layers (OCG)</a></li>
+<li><a href="https://www.overleaf.com/18083402qmjzhzbdkmww#/68448141/">Using TikZ and ocgx2</a></li>
+</ul>
+
+</main>
+
+  <footer>
+  
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+        inlineMath: [ ['$', '$'],["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+
+    "HTML-CSS": {availableFonts: ["TeX"]}
+});
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<link rel="stylesheet" href="/css/style/vs.css">
+<script src="/css/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+  
+  <hr/>
+  &copy; <a href="https://ddswhu.me/">Dongsheng Deng</a> 2018 &ndash; 2020 Theme <a href="https://themes.gohugo.io/hugo-xmin/">XMin</a> Powered by Hugo and Netlify
+  
+  </footer>
+  </body>
+</html>
+

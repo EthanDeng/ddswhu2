@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JSON on Dongsheng Deng&#39;s homepage</title>
+    <link>/tags/json/</link>
+    <description>Recent content in JSON on Dongsheng Deng&#39;s homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Export from MongoDB to csv</title>
+      <link>/posts/2018-04/export-from-mongodb-to-csv/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-04/export-from-mongodb-to-csv/</guid>
+      <description>1. Use MongoDB to save json file When scraping data from web, the response may be json format, we can use json library to handle this.
+import requests import json import pymongo # start pymongo connection = pymongo.MongoClient() data_base = connection.data_base collection = data_base.collection response = requests.post(url=url, data=payload, headers=headers) if response.status_code == 200: result_json = response.json() collection.insert(result_json)  If the json file is in right format, then you can use mongoexport command to export to csv.</description>
+    </item>
+    
+  </channel>
+</rss>

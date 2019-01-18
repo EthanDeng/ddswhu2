@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Export from MongoDB to csv | Dongsheng Deng&#39;s homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f3eaf531519275f71e2dea3ffbd25d5e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/research/">Research</a></li>
+      
+      <li><a href="/resource/">Resource</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="/travel/">Travel</a></li>
+      
+      <li><a href="/links/">Links</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+<div class="article-meta">
+<h1><span class="title">Export from MongoDB to csv</span></h1>
+ Dongsheng Deng @
+2018/04/13
+</div>
+
+<main>
+
+
+<h2 id="1-use-mongodb-to-save-json-file">1. Use MongoDB to save json file</h2>
+
+<p>When scraping data from web, the response may be json format, we can use <code>json</code> library to handle this.</p>
+
+<pre><code class="language-python">import requests
+import json
+import pymongo
+
+# start pymongo
+connection = pymongo.MongoClient()
+data_base = connection.data_base
+collection = data_base.collection
+
+response = requests.post(url=url, data=payload, headers=headers)
+
+if response.status_code == 200:
+    result_json = response.json()
+    collection.insert(result_json)
+</code></pre>
+
+<p>If the json file is in right format, then you can use <code>mongoexport</code> command to export to csv.</p>
+
+<pre><code class="language-shell">mongoexport --db database --collection collection  --type=csv --fields field1,field2 --out &quot;dir\collection.txt&quot;
+</code></pre>
+
+<p><strong>WARNING</strong>: <span style="color:red">Please use <code>txt</code> extension as the export file extension. DO NOT use <code>csv</code>, otherwise, you will lose <strong>0</strong> if some value string starts with <code>0</code>.</span> (<em>renew: 2018/04/17</em>)</p>
+
+<p>When the field is a dict, then you can treat the key-value pair as a subfield, and export as the normal field (length of 1). However, sometimes the filed of the json file contains a array, moreover, you need to convert the field array to rows of a table (ie, observations), and convert the field name to the header of the table (ie, variable name).</p>
+
+<h2 id="2-convert-non-regular-json-to-normal-for-exporting">2. Convert non-regular json to normal for exporting</h2>
+
+<p>For instance, the following json (from MongoDB) is not in the regular format, we cannot do much to the json (map reduce, aggregate, pipline operation etc.), we need convert it to normal table, export to csv/table or re-dump into MongoDB.</p>
+
+<pre><code class="language-json">{ 
+    &quot;_id&quot; : ObjectId(&quot;5ad08bf9d1673e1e60f97725&quot;), 
+    &quot;date&quot; : [
+        &quot;2017-04-30&quot;, 
+        &quot;2017-05-31&quot;, 
+        &quot;2017-06-30&quot;, 
+        &quot;2017-07-31&quot;
+    ], 
+    &quot;data1&quot; : [
+        14.44, 
+        15.15, 
+        14.84, 
+        14.2
+    ], 
+    &quot;data2&quot; : [
+        22.09, 
+        22.55, 
+        22.03, 
+        21.24
+    ], 
+    &quot;id&quot; : NumberInt(34)
+}
+</code></pre>
+
+<p>or the origin dictionary looks like</p>
+
+<pre><code class="language-python">long_dict = {
+    &quot;date&quot; : {
+       &quot;1&quot;:&quot;2017-04-30&quot;, 
+       &quot;2&quot;:&quot;2017-05-31&quot;, 
+       &quot;3&quot;:&quot;2017-06-30&quot;, 
+       &quot;4&quot;:&quot;2017-07-31&quot;
+    }, 
+    &quot;data1&quot; : {
+       &quot;1&quot;:14.44, 
+       &quot;2&quot;:15.15, 
+       &quot;3&quot;:14.84, 
+       &quot;4&quot;:14.2
+    }, 
+    &quot;data2&quot; : {
+       &quot;1&quot;:22.09, 
+       &quot;2&quot;:22.55, 
+       &quot;3&quot;:22.03, 
+       &quot;4&quot;:21.24
+    }, 
+    &quot;id&quot; : 34
+}
+</code></pre>
+
+<p>The expected result is</p>
+
+<p><center><img src="/posts/image/expected.png" width=350,alt="expected result" /></center></p>
+
+<p>The code is as follows</p>
+
+<pre><code class="language-python">import json 
+import pandas as pd
+
+# 1. dump dict to json string, and loads to get json type.
+result_json = json.loads(json.dumps(long_dict))
+
+# 2. convert the json to pandas data frame.
+result_df =pd.DataFrame.from_records(result_json)
+
+# 3. convert the data frame to dict using to_dict method with argument &quot;records&quot;.
+# 4. insert all the records to MongoDB.
+db_test.insert_many(result_df.to_dict('records'))
+</code></pre>
+
+<p><strong>Tips</strong>: The old MongdoDB document turns 4 documents in this example. If you want to export to csv, you can use previous command <code>mongoexport</code>.</p>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/26745519/converting-dictionary-to-json-in-python">Convert dictionary to json in python</a></li>
+<li><a href="https://stackoverflow.com/questions/21104592/json-to-pandas-dataframe">Convert json to pandas dataframe</a></li>
+<li><a href="https://stackoverflow.com/questions/20167194/insert-a-pandas-dataframe-into-mongodb-using-pymongo">Insert pandas dataframe into mongodb using pymongo</a></li>
+</ul>
+
+</main>
+
+  <footer>
+  
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+        inlineMath: [ ['$', '$'],["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+
+    "HTML-CSS": {availableFonts: ["TeX"]}
+});
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<link rel="stylesheet" href="/css/style/vs.css">
+<script src="/css/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+  
+  <hr/>
+  &copy; <a href="https://ddswhu.me/">Dongsheng Deng</a> 2018 &ndash; 2020 Theme <a href="https://themes.gohugo.io/hugo-xmin/">XMin</a> Powered by Hugo and Netlify
+  
+  </footer>
+  </body>
+</html>
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic Configuration of Cmder | Dongsheng Deng&#39;s homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f3eaf531519275f71e2dea3ffbd25d5e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/research/">Research</a></li>
+      
+      <li><a href="/resource/">Resource</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="/travel/">Travel</a></li>
+      
+      <li><a href="/links/">Links</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+<div class="article-meta">
+<h1><span class="title">Basic Configuration of Cmder</span></h1>
+ Dongsheng Deng @
+2018/07/05
+</div>
+
+<main>
+
+
+<h2 id="1-让-cmder-显示中文">1. 让 Cmder 显示中文</h2>
+
+<p>打开 Cmder 设置选项，找到 <code>Startup-Environment</code>，在右边添加下面代码</p>
+
+<pre><code class="language-shell">set LANG=zh_CN.UTF-8
+</code></pre>
+
+<h2 id="2-修改-cmder-默认打开目录">2. 修改 Cmder 默认打开目录</h2>
+
+<p>打开 Cmder 设置选项，找到 <code>Startup-Tasks</code>，将右边的 <code>cmd::Cmder as Admin</code> 任务运行内容修改为</p>
+
+<pre><code class="language-shell">*-new_console:d:C:\Users\Ethan cmd /k &quot;&quot;%ConEmuDir%\..\init.bat&quot; &quot; 
+</code></pre>
+
+<p>其中将 <code>C:\Users\Ethan</code> 替换为自己想要的启动目录。</p>
+
+<p>然后类似的将 <code>cmd::Cmder</code> 任务的运行内容替换为</p>
+
+<pre><code class="language-shell">-new_console:d:C:\Users\Ethan cmd /k &quot;&quot;%ConEmuDir%\..\init.bat&quot; &quot;
+</code></pre>
+
+<h2 id="3-修改命令提示符">3. 修改命令提示符</h2>
+
+<p>Cmder 默认的命令提示符是 <code>λ</code>，如果想改成常见的 <code>$</code>，只需要找到 Cmder 的安装目录下的 vendor 目录（我的是 <code>C:\Program Files\cmder\vendor</code>），然后将 <code>clink.lua</code> 文件中 <code>λ</code> 修改为 <code>$</code> 即可。具体的，可以在 <code>clink.lua</code> 文件中搜索 <code>λ</code>（大约在第 43 行）。修改之后 43 行代码为</p>
+
+<pre><code class="language-lua">    local lambda = &quot;$&quot;
+</code></pre>
+
+<h2 id="4-添加-cmder-到右键菜单选项">4. 添加 Cmder 到右键菜单选项</h2>
+
+<p>以管理员权限运行 Cmder，然后运行下面代码</p>
+
+<pre><code class="language-shell">Cmder.exe /REGISTER ALL
+</code></pre>
+
+<p><strong>注意</strong>：前提条件是 Cmder.exe 所在目录已经在系统环境变量（<code>Path</code>）中。</p>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="https://blog.csdn.net/DpangD/article/details/79254951">Cmder 初次使用前的一些常用配置</a></li>
+</ul>
+
+</main>
+
+  <footer>
+  
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+        inlineMath: [ ['$', '$'],["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+
+    "HTML-CSS": {availableFonts: ["TeX"]}
+});
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<link rel="stylesheet" href="/css/style/vs.css">
+<script src="/css/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+  
+  <hr/>
+  &copy; <a href="https://ddswhu.me/">Dongsheng Deng</a> 2018 &ndash; 2020 Theme <a href="https://themes.gohugo.io/hugo-xmin/">XMin</a> Powered by Hugo and Netlify
+  
+  </footer>
+  </body>
+</html>
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Dongsheng Deng&#39;s homepage</title>
+    <link>/categories/tools/</link>
+    <description>Recent content in Tools on Dongsheng Deng&#39;s homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Markdown Preview in Visual Studio Code</title>
+      <link>/posts/2018-07/markdown-preview-in-vs-code/</link>
+      <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-07/markdown-preview-in-vs-code/</guid>
+      <description>介绍  Markdown Preview Enhanced 是一款为 Atom 以及 Visual Studio Code 编辑器编写的超级强大的 Markdown 插件。 这款插件意在让你拥有飘逸的 Markdown 写作体验。
+ 我们先来看下官网的效果：
+
+安装 Markdown Preview Enhanced 的安装非常简单，打开 VS Code 之后，在插件管理，搜索 Markdown Preview Enhanced 这个插件，并选择安装，安装好之后重新加载就行了。
+预览配置 我们编写 Markdown 之后，在 VS Code 右上角有一个预览的按钮，点击预览按钮之后，会弹出 Markdown 的预览界面。不过预览界面在 Windows 上的效果并不太好（主要是字体问题）。而我选择 MPE 的原因就在于它支持你自己定义预览显示，并且也支持输出 Html 或者 PDF 格式。
+根据 MPE 的文档说明，在自定义 CSS 部分，我们可以根据文档对我们的预览进行修改。下面是我自己的预览设置。
+.markdown-preview.markdown-preview { font-size: 17px; font-family: &amp;quot;Myriad Pro&amp;quot;,&amp;quot;文泉驿微米黑&amp;quot;; pre, code { font-family: &#39;Menlo&#39;; } h1, h2, h3, h4, h5, h6 { font-family: &#39;Myriad Pro&#39;,&#39;黑体&#39;; } h1{ font-size: 28px; } h2{ font-size: 25px; } h3{ font-size: 22px; } h4, h5 { font-size: 20px; } }  修改好预览设置之后，我们可以看下显示的效果：</description>
+    </item>
+    
+    <item>
+      <title>Basic Configuration of Cmder</title>
+      <link>/posts/2018-07/configuration-of-cmder/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-07/configuration-of-cmder/</guid>
+      <description>1. 让 Cmder 显示中文 打开 Cmder 设置选项，找到 Startup-Environment，在右边添加下面代码
+set LANG=zh_CN.UTF-8  2. 修改 Cmder 默认打开目录 打开 Cmder 设置选项，找到 Startup-Tasks，将右边的 cmd::Cmder as Admin 任务运行内容修改为
+*-new_console:d:C:\Users\Ethan cmd /k &amp;quot;&amp;quot;%ConEmuDir%\..\init.bat&amp;quot; &amp;quot;  其中将 C:\Users\Ethan 替换为自己想要的启动目录。
+然后类似的将 cmd::Cmder 任务的运行内容替换为
+-new_console:d:C:\Users\Ethan cmd /k &amp;quot;&amp;quot;%ConEmuDir%\..\init.bat&amp;quot; &amp;quot;  3. 修改命令提示符 Cmder 默认的命令提示符是 λ，如果想改成常见的 $，只需要找到 Cmder 的安装目录下的 vendor 目录（我的是 C:\Program Files\cmder\vendor），然后将 clink.lua 文件中 λ 修改为 $ 即可。具体的，可以在 clink.lua 文件中搜索 λ（大约在第 43 行）。修改之后 43 行代码为
+local lambda = &amp;quot;$&amp;quot;  4.</description>
+    </item>
+    
+  </channel>
+</rss>

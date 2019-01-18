@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LaTeX on Dongsheng Deng&#39;s homepage</title>
+    <link>/tags/latex/</link>
+    <description>Recent content in LaTeX on Dongsheng Deng&#39;s homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Configure Sublime Text 3 as LaTeX IDE</title>
+      <link>/posts/2018-06/sublime-text-for-latex/</link>
+      <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-06/sublime-text-for-latex/</guid>
+      <description>本教程配有视频，视频下载链接：下载地址
+ Sublime Text 是一个轻量级的、跨平台的编辑器，搭配 LaTeXTools 和 TeX Live 或者 MiKTeX 使用可以编译 TeX 文件。以前你可能会觉得 LaTeX 命令很难记得住，写起来很麻烦，但是借助 Sublime Text 里面的 LaTeXTools 插件你会觉得写 TeX 文档也可以是一种享受。从我自身的经验来看，自从配置好 Sublime Text 之后，我再没回去用 TeXworks 或者 WinEdt。
+在 2014 年，我在自己博客上发布了如何使用 Sublime Text 搭建 LaTeX 编写环境，这么多年了，我的主页 发生了更迭，那篇帖子早已不见了，不过网上倒是能找到一些转载的内容。当时我将那篇帖子投稿到 LaTeX Studio，有兴趣的可以看下，传送门：Sublime Text 搭建 LaTeX 编写环境。时间过了这么多年，LaTeXTools 插件也发生了一些改变，原来的帖子感觉有点不合时代了，所以决定更新下。
+Sublime Text 3 的界面图
+
+2. 准备工作 首先，为了搭建 LaTeX 工作环境，你需要安装：
+ TeX Live 或者 MiKTeX （本文以 TeX Live 2017 为例） Sublime Text 3 Package Control (Sublime Text 插件) LaTeXTools （Sublime Text 插件） SumatraPDF 阅读器（可选，用于预览 PDF）  在上述软件/插件安装之后，你需要把 TeX Live 的 bin 目录（D:\Program Files\texlive\2017\bin\win32）以及 SumatraPDF 的路径（C:\Program Files (x86)\SumatraPDF）添加到系统环境变量（PATH）中。</description>
+    </item>
+    
+    <item>
+      <title>Configure Visual Stuido Code as LaTeX IDE</title>
+      <link>/posts/2018-04/vs-code-for-latex/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-04/vs-code-for-latex/</guid>
+      <description>本教程配有视频，视频下载链接：下载地址
+ 本文介绍如何配置 Visual Studio Code 作为 LaTeX 的编辑器。最新 PDF 版本下载。另外，如 果你对 Sublime Text 感兴趣的话，可以参考 Sublime Text 配置简介。
+1. 为什么用 Visual Studio Code Visual Studio Code（以下简称 VS Code） 是微软推出的一个编辑器，它的优点你可以百度一下，这里不赘述。对我来说，它最有吸引力的当属在 Windows 系统，它对于中英文字体的渲染。如果你原来用过其他编辑器，你就知道在普通屏幕上，中英文的显示效果简直是灾难。我原来因为编辑器的中文显示（当然还有 Terminal 的吸引力）一度想买 Mac，当然最后因为对性能和颜值的追求并不匹配我的财力，加上 Windows 上有些软件不能舍弃，最后作罢。
+注：高分屏加上合适的字体，Sublime Text 的显示效果也非常好。
+Visual Studio Code 的界面图
+
+2. 准备工作 首先，为了搭建 LaTeX 工作环境，你需要安装：
+ TeX Live 或者 MiKTeX （本文以 TeX Live 2017 为例） Visual Studio Code LaTeX Workshop （VS Code 插件） SumatraPDF 阅读器（可选，用于预览 PDF）  在上述软件/插件安装之后，你需要把 TeX Live 的 bin 目录（D:\Program Files\texlive\2017\bin\win32）以及 SumatraPDF 的路径（C:\Program Files (x86)\SumatraPDF）添加到系统环境变量（PATH）中。</description>
+    </item>
+    
+  </channel>
+</rss>

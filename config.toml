@@ -7,6 +7,7 @@ disqusShortname = "Comment"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
+publishDir = "docs"
 
 [permalinks]
     posts = "/posts/:year-:month/:slug/"

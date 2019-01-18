@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>recursive on Dongsheng Deng&#39;s homepage</title>
+    <link>/tags/recursive/</link>
+    <description>Recent content in recursive on Dongsheng Deng&#39;s homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/recursive/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python Notes 1 - Collatz Sequence</title>
+      <link>/posts/2018-07/python-note-collatz-sequence/</link>
+      <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-07/python-note-collatz-sequence/</guid>
+      <description>1. 定义函数实现循环调用 1.1 问题描述 &amp;mdash; Collatz 序列 编写一个名为 collatz() 的函数，它有一个名为 number 的参数。如果参数是偶数，那么 collatz() 返回 number//2，并返回该值。如果 number 为奇数，collatz() 打印并返回 3*number+1。
+然后编写一个程序，让用户输入一个整数，并不断对这个数调用 collatz()，直到函数返回值为 1。
+  记得将 input() 的返回值用 int() 函数转为一个整数，否则它会是一个字符串。 number %2 == 0，整数 number 就是偶数，如果 number %2 == 1，它就是奇数。   这个程序的输出结果应该像如下：
+Enter number: 3 10 5 16 8 4 2 1  1.2 解决方法 思路：利用 while 进行判断，让 collatz 自己循环调用自己。(代码下载)
+def collatz(number): if number % 2 == 0: print(number // 2) return number // 2 else: print(3*number + 1) return 3*number + 1 n = input(&amp;quot;Enter number: \n&amp;quot;) while n !</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage[colorlinks,linkcolor=blue]{hyperref}% do NOT set [ocgcolorlinks] here!
+\usepackage[ocgcolorlinks,tikz]{ocgx2}
+\usepackage{times}
+
+\title{Exercises for Data Analysis (Python)}
+\author{\href{https://ddswhu.me/}{ddswhu}}
+\linespread{1.3}
+\date{\today}
+
+
+
+\begin{document}
+\maketitle
+
+
+\section{101 NumPy Exercises for Data Analysis (Python)}
+
+
+\indent The goal of the numpy exercises is to serve as a reference as well as to get you to apply numpy beyond the basics. The questions are of 4 levels of difficulties with L1 being the easiest to L4 being the hardest.
+
+\noindent\textbf{Question 1}: How to access the response body of requests?\\
+\switchocg{ocg1}{\textbf{Show answer}}
+
+\begin{ocg}{Python Code}{ocg1}{1}
+\begin{verbatim}
+import requests
+url = 'www.example.com'
+reponse = request.get(url=url).content
+print(response)
+\end{verbatim}
+\end{ocg}
+
+\section{Using ocg in TikZ}
+
+The goal of the numpy exercises is to serve as a reference as well as to get you to apply numpy beyond the basics \switchocg{ocgridid}{Grid}. The questions are of 4 levels of difficulties with L1 being the easiest to L4 being the hardest  \switchocg{ocstatesid}{States}. If we don't understand \switchocg{ocedgesid}{Edge}.
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[node distance=3cm, state/.style={fill=green!20},auto]
+
+\begin{ocg}{grid}{ocgridid}{1}
+\draw[black!20] (-1,-1) grid (4,2);
+\end{ocg}
+
+\begin{ocg}{states}{ocstatesid}{1}
+\node[state] (q_a) {$q_a$};
+\node[state] (q_b) [right of=q_a] {$q_b$};
+\end{ocg}
+
+\begin{ocg}{edges}{ocedgesid}{1}
+\path[->]
+(q_a) edge node {0} (q_b)
+edge [loop above] node {0} ()
+(q_b) edge [loop above] node {1} ();
+\end{ocg}
+
+\end{tikzpicture}
+\end{figure}
+
+\end{document}

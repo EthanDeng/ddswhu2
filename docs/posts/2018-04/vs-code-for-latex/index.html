@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configure Visual Stuido Code as LaTeX IDE | Dongsheng Deng&#39;s homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f3eaf531519275f71e2dea3ffbd25d5e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/research/">Research</a></li>
+      
+      <li><a href="/resource/">Resource</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="/travel/">Travel</a></li>
+      
+      <li><a href="/links/">Links</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+<div class="article-meta">
+<h1><span class="title">Configure Visual Stuido Code as LaTeX IDE</span></h1>
+ Dongsheng Deng @
+2018/04/17
+</div>
+
+<main>
+
+
+<blockquote>
+<p>本教程配有视频，视频下载链接：<a href="https://mp.weixin.qq.com/s?__biz=MzAxNjI3Mzc3Mw==&amp;mid=2652772480&amp;idx=1&amp;sn=00b71ed30ce5b19019b39a86b1216e6b&amp;chksm=801de082b76a6994288d26a8573546dfa2970824496343f754c9a81d5fedf10458433623d0cc&amp;mpshare=1&amp;scene=1&amp;srcid=0620HAAqbVdiQiJipmiWIx06#rd">下载地址</a></p>
+</blockquote>
+
+<p>本文介绍如何配置 Visual Studio Code 作为 LaTeX 的编辑器。最新 PDF 版本<a href="/posts/archive/vscode.pdf">下载</a>。另外，如
+果你对 Sublime Text 感兴趣的话，可以参考 <a href="https://ddswhu.me/posts/2018-06/sublime-text-for-latex/">Sublime Text 配置简介</a>。</p>
+
+<h2 id="1-为什么用-visual-studio-code">1. 为什么用 Visual Studio Code</h2>
+
+<p>Visual Studio Code（以下简称 VS Code） 是微软推出的一个编辑器，它的优点你可以百度一下，这里不赘述。对我来说，它最有吸引力的当属在 Windows 系统，它对于中英文字体的渲染。如果你原来用过其他编辑器，你就知道在普通屏幕上，中英文的显示效果简直是灾难。我原来因为编辑器的中文显示（当然还有 Terminal 的吸引力）一度想买 Mac，当然最后因为对性能和颜值的追求并不匹配我的财力，加上 Windows 上有些软件不能舍弃，最后作罢。</p>
+
+<p><strong>注</strong>：高分屏加上合适的字体，Sublime Text 的显示效果也非常好。</p>
+
+<p><strong>Visual Studio Code 的界面图</strong></p>
+
+<p><center><img src="/posts/image/vs code.png" alt="效果图" /></center></p>
+
+<h2 id="2-准备工作">2. 准备工作</h2>
+
+<p>首先，为了搭建 LaTeX 工作环境，你需要安装：</p>
+
+<ul>
+<li>TeX Live 或者 MiKTeX （本文以 TeX Live 2017 为例）</li>
+<li>Visual Studio Code</li>
+<li>LaTeX Workshop （VS Code 插件）</li>
+<li>SumatraPDF 阅读器（可选，用于预览 PDF）</li>
+</ul>
+
+<p>在上述软件/插件安装之后，你需要把 TeX Live 的 bin 目录（<code>D:\Program Files\texlive\2017\bin\win32</code>）以及 SumatraPDF 的路径（<code>C:\Program Files (x86)\SumatraPDF</code>）添加到系统环境变量（<code>PATH</code>）中。</p>
+
+<h3 id="2-1-安装插件">2.1 安装插件</h3>
+
+<p>VS Code 中插件安装方法如下：在左侧点击扩展按钮（KEY：<code>Ctrl+Shift+X</code>）,然后搜索插件名字 LaTeX Workshop，选择安装即可。</p>
+
+<h3 id="2-2-添加环境变量">2.2 添加环境变量</h3>
+
+<p>Win10 中将路径添加到环境变量中的步骤如下：右键我的电脑，然后选择 <code>属性</code>，在左侧选择 <code>高级系统设置</code>，然后选择下方的 <code>环境变量</code>，选择变量 <code>Path</code> 编辑，将需要添加的路径添加进去即可。</p>
+
+<h2 id="3-配置编译方式与编译组合">3. 配置编译方式与编译组合</h2>
+
+<p>VS Code 在今年经历了一次大改之后，配置比原来简单了。它们把过去的 <code>tool.chain</code> 改为了 <code>recipe</code>，其实本质上是一样的。</p>
+
+<h3 id="3-1-编译方式-tool">3.1 编译方式（<code>tool</code>）</h3>
+
+<p>VS Code 默认添加了3个编译工具（tools）：分别是 <code>latexmk</code>，<code>pdflatex</code> 和 <code>bibtex</code>（所有的工具只编译一次）。编译 <code>tex</code> 文档方法，使用右键，选择 <code>Build LaTeX Project</code>（快捷键：<code>Ctrl+Alt+B</code>），默认使用 <code>latexmk</code>，查看 PDF 文件使用快捷键：<code>Ctrl+Alt+V</code>。</p>
+
+<p>为了添加其他的编译方式（比如 <code>xelatex</code>），我们需要修改 LaTeX Workshop 的配置。方法如下：打开 VS Code 的配置（VS Code 界面左下角，点击齿轮按钮，选择设置），在右侧（用户设置）粘贴下面 JSON 片段：</p>
+
+<pre><code class="language-json">&quot;latex-workshop.latex.tools&quot;: [
+  {
+    &quot;name&quot;: &quot;xelatex&quot;,
+    &quot;command&quot;: &quot;xelatex&quot;,
+    &quot;args&quot;: [
+      &quot;-synctex=1&quot;,
+      &quot;-interaction=nonstopmode&quot;,
+      &quot;-file-line-error&quot;,
+      &quot;%DOC%&quot;
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;pdflatex&quot;,
+    &quot;command&quot;: &quot;pdflatex&quot;,
+    &quot;args&quot;: [
+      &quot;-synctex=1&quot;,
+      &quot;-interaction=nonstopmode&quot;,
+      &quot;-file-line-error&quot;,
+      &quot;%DOC%&quot;
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;latexmk&quot;,
+    &quot;command&quot;: &quot;latexmk&quot;,
+    &quot;args&quot;: [
+      &quot;-synctex=1&quot;,
+      &quot;-interaction=nonstopmode&quot;,
+      &quot;-file-line-error&quot;,
+      &quot;-pdf&quot;,
+      &quot;%DOC%&quot;
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;bibtex&quot;,
+    &quot;command&quot;: &quot;bibtex&quot;,
+    &quot;args&quot;: [
+      &quot;%DOCFILE%&quot;
+    ]
+  }
+],
+</code></pre>
+
+<p><strong>注意</strong>，虽然左侧插件默认添加了编译方式（<code>pdflatex</code> 与 <code>bibtex</code>），也必须将其编译方式的设置（比如 <code>latex</code> 等）添加到右侧用户设置中。</p>
+
+<h3 id="3-2-编译组合-recipe">3.2 编译组合（<code>recipe</code>）</h3>
+
+<p>如果我们要对一个文档/项目完整的编译（比如<code>pdflatex-&gt;bibtex-&gt;pdflatex-&gt;pdflatex</code>）我们需要用到编译组合（<code>recipes</code>）。LaTeX Workshop 默认添加了两个 <code>recipes</code>，分别是 <code>latexmk</code> 和 <code>pdflatex -&gt; bibtex -&gt; pdflatex*2</code>，可以通过右键文档，选择 <code>LaTeX Worksho: All Actions</code>，选择 <code>Build LaTeX Project</code>，然后选择适合的编译组合。</p>
+
+<p>我们之前添加了 <code>xelatex</code> 编译方式，我们这里配置下 <code>xelatex</code> 的完整编译链 <code>xelatex -&gt; bibtex -&gt; xelatex*2</code>,另外补充单次编译的 <code>recipes</code>。方法和之前类似，打开用户配置文件，将如下 JSON 添加到用户配置中即可。</p>
+
+<pre><code class="language-json">&quot;latex-workshop.latex.recipes&quot;: [
+    {
+      &quot;name&quot;: &quot;PDFLaTeX&quot;,
+      &quot;tools&quot;: [
+        &quot;pdflatex&quot;
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;XeLaTeX&quot;,
+      &quot;tools&quot;: [
+        &quot;xelatex&quot;
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;latexmk&quot;,
+      &quot;tools&quot;: [
+        &quot;latexmk&quot;
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;BibTeX&quot;,
+      &quot;tools&quot;: [
+        &quot;bibtex&quot;
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;pdflatex -&gt; bibtex -&gt; pdflatex*2&quot;,
+      &quot;tools&quot;: [
+        &quot;pdflatex&quot;,
+        &quot;bibtex&quot;,
+        &quot;pdflatex&quot;,
+        &quot;pdflatex&quot;
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;,
+      &quot;tools&quot;: [
+        &quot;xelatex&quot;,
+        &quot;bibtex&quot;,
+        &quot;xelatex&quot;,
+        &quot;xelatex&quot;
+      ]
+    }
+  ],
+</code></pre>
+
+<p>这里提供一个测试完整编译方式的代码（<a href="/posts/archive/content.tex">tex</a>, <a href="/posts/archive/info.bib">bib</a>, <a href="/posts/archive/content.pdf">pdf</a>），你可以用来测试能否编译。效果图如下：</p>
+
+<p><center><img src="/posts/image/example.png" height=500px></center></p>
+
+<h3 id="3-3-指定编译方式">3.3 指定编译方式</h3>
+
+<p>在 Sublime Text 或者 TeX Studio 中，可以在文件的首行指定编译方式（<code>% !TEX program</code>）以及主文档（<code>% !TEX root</code>），LaTeX Workshop 也把这个功能添加到了其中，使用方法完全一样。<code>% !TEX program</code> 和 <code>% !TEX root</code> 被称为 Magic Command。</p>
+
+<p>示例如下：</p>
+
+<pre><code class="language-tex">% !TEX program = xelatex
+\documentclass{article}
+
+\author{Dongsheng Deng}
+\title{Configuration of Visual Studio Code for LaTeX Users}
+
+\begin{document}
+\maketitle
+
+Example text.
+
+\end{document}
+</code></pre>
+
+<p>将上述代码保存为 <code>test.tex</code>，然后使用快捷键 <code>Ctrl+Alt+B</code>，系统会自动选择 <code>xelatex</code> 作为编译方式。如果没有其他问题，就能正常编译。</p>
+
+<h2 id="4-其他配置">4 其他配置</h2>
+
+<h3 id="4-1-配置快捷键">4.1 配置快捷键</h3>
+
+<p>LaTeX Workshop 的快捷键并不友好，我们可以自定义快捷键，方法如下：点击 VS Code 左下角的齿轮（设置），选择 <code>键盘快捷方式</code>。</p>
+
+<ul>
+<li>搜索 <code>latex build</code>，将默认的快捷方式改为 <code>Ctrl+B</code></li>
+<li>搜索 <code>build with recipe</code>，将其改为 <code>Ctrl+R</code></li>
+<li>搜索 <code>latex pdf file</code>，将其改为 <code>Ctrl+1</code></li>
+<li>搜索 <code>close environment</code>，将其改为 <code>Ctrl+E</code></li>
+<li>搜索 <code>latex compiler log</code>，将其改为 <code>Ctrl+O</code></li>
+<li>你还可以补充其他快捷键。</li>
+</ul>
+
+<p>配置好快捷键之后，之后当你指定了编译方式时可以直接使用快捷键 <code>Ctrl+B</code> 编译一次文档。当你需要完整编译整个文档（文献，目录等），使用快捷键 <code>Ctrl+R</code>，选择完整的编译方案即可。是不是方便多了？</p>
+
+<p><strong>补充</strong>：为了方便快捷键的绑定，这里直接提供设置文件（<code>keybindings.json</code>）的 <a href="/posts/archive/keybindings.json">下载</a>，下载之后只需要将其替换用户的快捷键设置即可（默认位置为：<code>C:\Users\YourUserName\AppData\Roaming\Code\User\keybindings.json</code>）。(<em>renew: 2018/04/18</em>)</p>
+
+<h3 id="4-2-配置阅读器以及自动编译">4.2 配置阅读器以及自动编译</h3>
+
+<p>还有其他几个设置需要提一下，由于笔记本的屏幕很小，我并不习惯使用 VS Code 自带的 PDF 阅读器作为预览的阅读器，可以设置 <code>SumatraPDF</code> 作为 PDF 阅读器。另外，自动编译选项我也选择关闭。</p>
+
+<pre><code class="language-json">&quot;latex-workshop.view.pdf.viewer&quot;: &quot;external&quot;,
+&quot;latex-workshop.latex.autoBuild.onSave.enabled&quot;: false,
+</code></pre>
+
+<h3 id="4-3-mac-系统-pdf-阅读器配置">4.3 Mac 系统 PDF 阅读器配置</h3>
+
+<p>如何让 VS Code 在 Mac 上与诸如 Skim 的外部 PDF 浏览器配合工作——特别是 LaTeX 的正反跳转，请参考小L 的<a href="https://liam0205.me/2018/04/24/Working-with-VSCode-on-macOS-configuration-LaTeX-workshop-and-Skim/">配置说明</a>。</p>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="https://github.com/James-Yu/LaTeX-Workshop">Github: LaTeX-Workshop</a></li>
+<li><a href="http://ddswhu.com/visual-studio-code-latex/">Visual Studio Code 搭建 LaTeX 编写环境</a></li>
+<li><a href="https://stackoverflow.com/questions/39775406/how-to-turn-off-matching-highlighting">How to turn off matching highlighting</a></li>
+</ul>
+
+</main>
+
+  <footer>
+  
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+        inlineMath: [ ['$', '$'],["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+
+    "HTML-CSS": {availableFonts: ["TeX"]}
+});
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<link rel="stylesheet" href="/css/style/vs.css">
+<script src="/css/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+  
+  <hr/>
+  &copy; <a href="https://ddswhu.me/">Dongsheng Deng</a> 2018 &ndash; 2020 Theme <a href="https://themes.gohugo.io/hugo-xmin/">XMin</a> Powered by Hugo and Netlify
+  
+  </footer>
+  </body>
+</html>
+

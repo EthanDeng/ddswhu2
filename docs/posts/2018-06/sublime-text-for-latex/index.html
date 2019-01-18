@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configure Sublime Text 3 as LaTeX IDE | Dongsheng Deng&#39;s homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f3eaf531519275f71e2dea3ffbd25d5e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/research/">Research</a></li>
+      
+      <li><a href="/resource/">Resource</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="/travel/">Travel</a></li>
+      
+      <li><a href="/links/">Links</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+<div class="article-meta">
+<h1><span class="title">Configure Sublime Text 3 as LaTeX IDE</span></h1>
+ Dongsheng Deng @
+2018/06/03
+</div>
+
+<main>
+
+
+<blockquote>
+<p>本教程配有视频，视频下载链接：<a href="https://mp.weixin.qq.com/s/3FXTI3t-L_0OBWtoxfmOgQ">下载地址</a></p>
+</blockquote>
+
+<p>Sublime Text 是一个轻量级的、跨平台的编辑器，搭配 LaTeXTools 和 TeX Live 或者 MiKTeX 使用可以编译 TeX 文件。以前你可能会觉得 LaTeX 命令很难记得住，写起来很麻烦，但是借助 Sublime Text 里面的 LaTeXTools 插件你会觉得写 TeX 文档也可以是一种享受。从我自身的经验来看，自从配置好 Sublime Text 之后，我再没回去用 TeXworks 或者 WinEdt。</p>
+
+<p>在 2014 年，我在自己博客上发布了如何使用 Sublime Text 搭建 LaTeX 编写环境，这么多年了，我的主页 发生了更迭，那篇帖子早已不见了，不过网上倒是能找到一些转载的内容。当时我将那篇帖子投稿到 LaTeX Studio，有兴趣的可以看下，传送门：<a href="http://www.latexstudio.net/archives/1169">Sublime Text 搭建 LaTeX 编写环境</a>。时间过了这么多年，LaTeXTools 插件也发生了一些改变，原来的帖子感觉有点不合时代了，所以决定更新下。</p>
+
+<p><strong>Sublime Text 3 的界面图</strong></p>
+
+<p><center><img src="/posts/image/sublime.png" alt="效果图" /></center></p>
+
+<h2 id="2-准备工作">2. 准备工作</h2>
+
+<p>首先，为了搭建 LaTeX 工作环境，你需要安装：</p>
+
+<ul>
+<li>TeX Live 或者 MiKTeX （本文以 TeX Live 2017 为例）</li>
+<li>Sublime Text 3</li>
+<li>Package Control (Sublime Text 插件)</li>
+<li>LaTeXTools （Sublime Text 插件）</li>
+<li>SumatraPDF 阅读器（可选，用于预览 PDF）</li>
+</ul>
+
+<p>在上述软件/插件安装之后，你需要把 TeX Live 的 bin 目录（<code>D:\Program Files\texlive\2017\bin\win32</code>）以及 SumatraPDF 的路径（<code>C:\Program Files (x86)\SumatraPDF</code>）添加到系统环境变量（<code>PATH</code>）中。</p>
+
+<h3 id="2-1-安装插件">2.1 安装插件</h3>
+
+<h4 id="2-1-1-安装-package-control">2.1.1 安装 Package Control</h4>
+
+<p>打开 Sublime Text 的包管理工具 Package Control 的<a href="https://packagecontrol.io/installation">安装介绍界面</a>，选择 Sublime Text 3 版本的安装命令（如下）并复制</p>
+
+<pre><code class="language-python">import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+</code></pre>
+
+<p>然后，打开 Sublime Text，按住快捷 <code>Ctrl+~</code>（或者 <code>View -&gt; Show Console</code>）打开控制台，然后将上述代码粘贴到 Console 里面，完成 Package Control 的安装。</p>
+
+<h4 id="2-1-2-安装-latextools">2.1.2 安装 LaTeXTools</h4>
+
+<p>在 Sublime Text 内，按住 <code>Ctrl+Shift+P</code> 打开命令选项板（Command Palette），选择 <code>Package Control: Install Package</code>，然后找到 <code>LaTeXTools</code>，选择安装即可。</p>
+
+<h3 id="2-2-添加环境变量">2.2 添加环境变量</h3>
+
+<p>Win10 中将路径添加到环境变量中的步骤如下：右键我的电脑，然后选择 <code>属性</code>，在左侧选择 <code>高级系统设置</code>，然后选择下方的 <code>环境变量</code>，选择变量 <code>Path</code> 编辑，将需要添加的路径添加进去即可。</p>
+
+<h2 id="3-配置过程">3. 配置过程</h2>
+
+<h3 id="3-1-配置-latextools">3.1 配置 LaTeXTools</h3>
+
+<p>改版之后的 LaTeXTools 配置起来非常方便，只需要修改用户设置文件，依次选择 <code>Preferences -&gt; Package Settings -&gt; LaTeXTools -&gt; Settings – User</code>，打开 LaTeXTools.sublime-settings 这个文件，根据自己的操作系统修改 TeX 的路径（在 200 行左右），选择对应的发行版本，然后修改用于预览的 PDF 阅读器的路径（推荐 SumatraPDF，如果已经添加到系统路径，则 <code>sumatra</code> 不需要设置），以及指定 Sublime Text 的路径，修改之后的 LaTeXTools.sublime-settings 文件如下所示</p>
+
+<pre><code class="language-json">  &quot;windows&quot;: {
+    &quot;texpath&quot; : &quot;D:\\Program Files\\texlive\\2017\\bin\\win32&quot;,
+    &quot;distro&quot; : &quot;texlive&quot;,
+    &quot;sumatra&quot;: &quot;&quot;,
+    &quot;sublime_executable&quot;: &quot;&quot;,
+    &quot;keep_focus_delay&quot;: 1200
+  },
+</code></pre>
+
+<h3 id="3-2-反向搜索设置">3.2 反向搜索设置</h3>
+
+<p>由于 SumatraPDF 反向搜索的选项配置是隐藏的，因此，我们这里先编译一个 LaTeX 的例子，将下面的代码复制到 Sublime Text 里面</p>
+
+<pre><code class="language-tex">%!TEX program = pdflatex
+
+\documentclass{article}
+
+\title{test}
+\author{ddswhu}
+\date{\today}
+ 
+\begin{document}
+\maketitle
+ 
+This is the context of the article.
+ 
+\end{document}
+</code></pre>
+
+<p>保存为 <code>test.tex</code>，再按组合键 <code>Ctrl+B</code> 编译，SumatraPDF 就会自动弹出，显示 <code>test.pdf</code> 的内容，然后在 SumatraPDF 上方的菜单栏选择 <code>设置</code>，将下面的代码添加到 SumatraPDF 选项的最下面方的反向搜索设置框内即可。</p>
+
+<pre><code class="language-shell">&quot;C:\Program Files\Sublime Text 3\sublime_text.exe&quot; &quot;%f:%l&quot;
+</code></pre>
+
+<p>确定然后关闭。这样，我们就设置好了 SumatraPDF 的反向搜索。至此，我们已经搭建好了 Sublime Text 用于编辑 LaTeX 的环境。</p>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="https://packagecontrol.io/installation">https://packagecontrol.io/installation</a></li>
+<li><a href="https://latextools.readthedocs.io/en/latest/install/">https://latextools.readthedocs.io/en/latest/install/</a></li>
+<li><a href="http://www.latexstudio.net/archives/1169">Sublime Text 搭建 LaTeX 编写环境</a></li>
+</ul>
+
+</main>
+
+  <footer>
+  
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+        inlineMath: [ ['$', '$'],["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+
+    "HTML-CSS": {availableFonts: ["TeX"]}
+});
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<link rel="stylesheet" href="/css/style/vs.css">
+<script src="/css/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+  
+  <hr/>
+  &copy; <a href="https://ddswhu.me/">Dongsheng Deng</a> 2018 &ndash; 2020 Theme <a href="https://themes.gohugo.io/hugo-xmin/">XMin</a> Powered by Hugo and Netlify
+  
+  </footer>
+  </body>
+</html>
+

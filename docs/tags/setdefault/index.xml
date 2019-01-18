@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>setdefault on Dongsheng Deng&#39;s homepage</title>
+    <link>/tags/setdefault/</link>
+    <description>Recent content in setdefault on Dongsheng Deng&#39;s homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/setdefault/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python Notes 2 - setdefault Method</title>
+      <link>/posts/2018-07/python-note-setdefault-method/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-07/python-note-setdefault-method/</guid>
+      <description>1. 字典中 setdefault 方法怎么理解？ 1.1 问题描述 参考菜鸟教程中 setdefault 的描述：Python3 字典 setdefault() 方法
+ Python 字典 setdefault() 方法和 get() 方法类似, 如果键不已经存在于字典中，将会添加键并将值设为默认值。
+ 字典的 setdefault 方法与字典赋值有什么区别？
+1.2 语法区别 setdefault() 方法的语法：
+dict.setdefault(key, default=None)  直接赋值方法：
+dict[&#39;key&#39;] = value  1.3 理解 setdefault 方法 # 字典的 setdefault 方法的用途是给一个字典某个 key 指定默认的 value # 在 key 不存在的时候，会新建 key-value 对 # 但是当 key 存在的时候，setdefault 不会更改这个 key 所对应的 value。 spam = {&#39;Name&#39;: &#39;Runoob&#39;, &#39;Age&#39;: 7} spam.setdefault(&#39;Age&#39;,&#39;25&#39;) spam.setdefault(&#39;Sex&#39;, &#39;NA&#39;) spam.</description>
+    </item>
+    
+  </channel>
+</rss>

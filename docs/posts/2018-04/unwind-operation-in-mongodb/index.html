@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MongoDB unwind Operations | Dongsheng Deng&#39;s homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f3eaf531519275f71e2dea3ffbd25d5e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/research/">Research</a></li>
+      
+      <li><a href="/resource/">Resource</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="/travel/">Travel</a></li>
+      
+      <li><a href="/links/">Links</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+<div class="article-meta">
+<h1><span class="title">MongoDB unwind Operations</span></h1>
+ Dongsheng Deng @
+2018/04/29
+</div>
+
+<main>
+
+
+<p>Just as the <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/index.html">MongoDB manual</a> pointed out:</p>
+
+<blockquote>
+<p><code>unwind</code> deconstructs an array field from the input documents to output a document for each element. Each output document is the input document with the value of the array field replaced by the element.</p>
+</blockquote>
+
+<p>Here are two different cases in appliaction. It depends how the data is stored.</p>
+
+<h2 id="1-m-array-fields-n-observations-case">1. M array fields × N observations case</h2>
+
+<p>If we have <em>K</em> variables in each document, and the <em>M</em> variables are stored as array field. The value of each array field is a list of length <em>N</em>, corresponding to the <em>N</em> observations of the variable (i.e. array field).</p>
+
+<p>I take the previous example for illustration. The document is</p>
+
+<pre><code class="language-json">{ 
+    &quot;_id&quot; : ObjectId(&quot;5ad08bf9d1673e1e60f97725&quot;), 
+    &quot;date&quot; : [
+        &quot;2017-04-30&quot;, 
+        &quot;2017-05-31&quot;, 
+        &quot;2017-06-30&quot;, 
+        &quot;2017-07-31&quot;
+    ], 
+    &quot;data1&quot; : [
+        14.44, 
+        15.15, 
+        14.84, 
+        14.2
+    ], 
+    &quot;data2&quot; : [
+        22.09, 
+        22.55, 
+        22.03, 
+        21.24
+    ], 
+    &quot;id&quot; : NumberInt(34)
+}
+</code></pre>
+
+<p>In this document, the final output required contains 4 variables, and 3 variables are store as array field. We can use the <code>unwind</code> and <code>project</code> operation to get the 4×4 table. The query code is</p>
+
+<pre><code class="language-js">// Requires official MongoShell 3.6+
+use TEST_DB;
+db.TEST_COLLECTION.aggregate(
+    [
+        { 
+            &quot;$unwind&quot; : {
+                &quot;path&quot; : &quot;$date&quot;, 
+                &quot;includeArrayIndex&quot; : &quot;idx&quot;
+            }
+        }, 
+        { 
+            &quot;$project&quot; : {
+                &quot;_id&quot; : 0.0, 
+                &quot;date&quot; : 1.0, 
+                &quot;id&quot; : 1.0, 
+                &quot;data1&quot; : {
+                    &quot;$arrayElemAt&quot; : [
+                        &quot;$data1&quot;, 
+                        &quot;$idx&quot;
+                    ]
+                }, 
+                &quot;data2&quot; : {
+                    &quot;$arrayElemAt&quot; : [
+                        &quot;$data2&quot;, 
+                        &quot;$idx&quot;
+                    ]
+                }
+            }
+        }
+    ], 
+    { 
+        &quot;allowDiskUse&quot; : true
+    }
+);
+</code></pre>
+
+<p>In stage 1, we unwind the <code>date</code> field, and it returns the <code>idx</code> indicates the index of the unwinded document in the field. With the idx, we can use <code>arrayElemAt</code> operation to access the corresponding value of other variables(i.e. <code>data1</code> and <code>data2</code>), then use <code>project</code> operation to the get the field. The final result is</p>
+
+<pre><code class="language-json">{ 
+    &quot;date&quot; : &quot;2017-04-30&quot;, 
+    &quot;id&quot; : NumberInt(34), 
+    &quot;data1&quot; : 14.44, 
+    &quot;data2&quot; : 22.09
+}
+{ 
+    &quot;date&quot; : &quot;2017-05-31&quot;, 
+    &quot;id&quot; : NumberInt(34), 
+    &quot;data1&quot; : 15.15, 
+    &quot;data2&quot; : 22.55
+}
+{ 
+    &quot;date&quot; : &quot;2017-06-30&quot;, 
+    &quot;id&quot; : NumberInt(34), 
+    &quot;data1&quot; : 14.84, 
+    &quot;data2&quot; : 22.03
+}
+{ 
+    &quot;date&quot; : &quot;2017-07-31&quot;, 
+    &quot;id&quot; : NumberInt(34), 
+    &quot;data1&quot; : 14.2, 
+    &quot;data2&quot; : 21.24
+}
+</code></pre>
+
+<h2 id="2-1-array-field-n-obeservations-m-variables-case">2. 1 array field × N obeservations × M variables case</h2>
+
+<p>In this case, the document is something like</p>
+
+<pre><code class="language-json">{ 
+    &quot;_id&quot; : ObjectId(&quot;5abdaecad1673e0af4ddff6c&quot;), 
+    &quot;status&quot; : NumberInt(0), 
+    &quot;message&quot; : &quot;Success&quot;, 
+    &quot;data&quot; : {
+        &quot;totalJoinAmount&quot; : &quot;5201314.00&quot;, 
+        &quot;totalCount&quot; : NumberInt(2), 
+        &quot;list&quot; : [
+            {
+                &quot;userId&quot; : NumberInt(13), 
+                &quot;nickName&quot; : &quot;Lisa&quot;, 
+                &quot;amount&quot; : NumberInt(2600657), 
+                &quot;createTime&quot; : NumberLong(1473266281111), 
+                &quot;tradeMethod&quot; : &quot;PC&quot;, 
+                &quot;finalAmount&quot; : NumberInt(0), 
+                &quot;ucodeId&quot; : null
+            },
+            {
+                &quot;userId&quot; : NumberInt(14), 
+                &quot;nickName&quot; : &quot;Ethan&quot;, 
+                &quot;amount&quot; : NumberInt(2600657), 
+                &quot;createTime&quot; : NumberLong(1473266280720), 
+                &quot;tradeMethod&quot; : &quot;MOBILE&quot;, 
+                &quot;finalAmount&quot; : NumberInt(0), 
+                &quot;ucodeId&quot; : null
+            }
+        ]
+    }, 
+    &quot;id&quot; : NumberInt(9999)
+}
+</code></pre>
+
+<p>We have two obeservations, and each observation is stored as an element of the value of array field <code>list</code>. The method is as follows</p>
+
+<ul>
+<li>use <code>project</code> to get the information we want.</li>
+<li>use <code>unwind</code> to unwind the list.</li>
+<li>use <code>project</code> to get the fields we need.</li>
+<li>use <code>out</code> to store the output to another collection.</li>
+</ul>
+
+<p>Here is the query code:</p>
+
+<pre><code class="language-js">use TEST_DB;
+db.TEST_COLLECTION.aggregate(
+    [
+        { 
+            &quot;$project&quot; : {
+                &quot;_id&quot; : 0.0, 
+                &quot;status&quot; : 1.0, 
+                &quot;message&quot; : 1.0, 
+                &quot;totalJoinAmount&quot; : &quot;$data.totalJoinAmount&quot;, 
+                &quot;totalCount&quot; : &quot;$data.totalCount&quot;, 
+                &quot;list&quot; : &quot;$data.list&quot;, 
+                &quot;id&quot; : 1.0
+            }
+        }, 
+        { 
+            &quot;$unwind&quot; : {
+                &quot;path&quot; : &quot;$list&quot;, 
+                &quot;includeArrayIndex&quot; : &quot;idx&quot;
+            }
+        }, 
+        { 
+            &quot;$project&quot; : {
+                &quot;status&quot; : 1.0, 
+                &quot;message&quot; : 1.0, 
+                &quot;totalJoinAmount&quot; : 1.0, 
+                &quot;totalCount&quot; : 1.0, 
+                &quot;userId&quot; : &quot;$list.userId&quot;, 
+                &quot;nickName&quot; : &quot;$list.nickName&quot;, 
+                &quot;amount&quot; : &quot;$list.amount&quot;, 
+                &quot;createTime&quot; : &quot;$list.createTime&quot;, 
+                &quot;tradeMethod&quot; : &quot;$list.tradeMethod&quot;, 
+                &quot;finalAmount&quot; : &quot;$list.finalAmount&quot;, 
+                &quot;id&quot; : 1.0, 
+                &quot;idx&quot; : 1.0
+            }
+        }, 
+        { 
+            &quot;$out&quot; : &quot;Ich Liebe Dich&quot;
+        }
+    ], 
+    { 
+        &quot;allowDiskUse&quot; : true
+    }
+);
+</code></pre>
+
+<p>The final result (in <code>Ich Liebe Dich</code> collection) is</p>
+
+<pre><code class="language-json">{ 
+    &quot;_id&quot; : ObjectId(&quot;5ae664119b2215a5caffa0e4&quot;), 
+    &quot;status&quot; : NumberInt(0), 
+    &quot;message&quot; : &quot;Success&quot;, 
+    &quot;id&quot; : NumberInt(9999), 
+    &quot;totalJoinAmount&quot; : &quot;5201314.00&quot;, 
+    &quot;totalCount&quot; : NumberInt(2), 
+    &quot;idx&quot; : NumberLong(0), 
+    &quot;userId&quot; : NumberInt(13), 
+    &quot;nickName&quot; : &quot;Lisa&quot;, 
+    &quot;amount&quot; : NumberInt(2600657), 
+    &quot;createTime&quot; : NumberLong(1473266281111), 
+    &quot;tradeMethod&quot; : &quot;PC&quot;, 
+    &quot;finalAmount&quot; : NumberInt(0)
+}
+{ 
+    &quot;_id&quot; : ObjectId(&quot;5ae664119b2215a5caffa0e5&quot;), 
+    &quot;status&quot; : NumberInt(0), 
+    &quot;message&quot; : &quot;Success&quot;, 
+    &quot;id&quot; : NumberInt(9999), 
+    &quot;totalJoinAmount&quot; : &quot;5201314.00&quot;, 
+    &quot;totalCount&quot; : NumberInt(2), 
+    &quot;idx&quot; : NumberLong(1), 
+    &quot;userId&quot; : NumberInt(14), 
+    &quot;nickName&quot; : &quot;Ethan&quot;, 
+    &quot;amount&quot; : NumberInt(2600657), 
+    &quot;createTime&quot; : NumberLong(1473266280720), 
+    &quot;tradeMethod&quot; : &quot;MOBILE&quot;, 
+    &quot;finalAmount&quot; : NumberInt(0)
+}
+</code></pre>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/index.html">Official unwind manual from MongoDB</a></li>
+<li><a href="https://stackoverflow.com/questions/39373442/mongodb-unwind-multiple-arrays">MongoDB unwind multiple arrays</a></li>
+<li><a href="https://stackoverflow.com/questions/26252454/to-print-nested-json-array-values-into-csv-using-mongodb">Print nested json array values into csv using MongoDB</a></li>
+<li><a href="https://stackoverflow.com/questions/39426022/mongodb-show-children-items-in-one-to-many-relationship">MongoDB show children items in One to Many relationship</a></li>
+</ul>
+
+</main>
+
+  <footer>
+  
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+        inlineMath: [ ['$', '$'],["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+
+    "HTML-CSS": {availableFonts: ["TeX"]}
+});
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<link rel="stylesheet" href="/css/style/vs.css">
+<script src="/css/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+  
+  <hr/>
+  &copy; <a href="https://ddswhu.me/">Dongsheng Deng</a> 2018 &ndash; 2020 Theme <a href="https://themes.gohugo.io/hugo-xmin/">XMin</a> Powered by Hugo and Netlify
+  
+  </footer>
+  </body>
+</html>
+

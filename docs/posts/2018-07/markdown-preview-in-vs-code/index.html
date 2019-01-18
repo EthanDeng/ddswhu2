@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Markdown Preview in Visual Studio Code | Dongsheng Deng&#39;s homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f3eaf531519275f71e2dea3ffbd25d5e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/research/">Research</a></li>
+      
+      <li><a href="/resource/">Resource</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="/travel/">Travel</a></li>
+      
+      <li><a href="/links/">Links</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+<div class="article-meta">
+<h1><span class="title">Markdown Preview in Visual Studio Code</span></h1>
+ Dongsheng Deng @
+2018/07/11
+</div>
+
+<main>
+
+
+<h2 id="介绍">介绍</h2>
+
+<blockquote>
+<p>Markdown Preview Enhanced 是一款为 Atom 以及 Visual Studio Code 编辑器编写的超级强大的 Markdown 插件。 这款插件意在让你拥有飘逸的 Markdown 写作体验。</p>
+</blockquote>
+
+<p>我们先来看下官网的效果：</p>
+
+<p><center><img src="/posts/image/mdpreenhance.png" alt="效果图" /></center></p>
+
+<h2 id="安装">安装</h2>
+
+<p>Markdown Preview Enhanced 的安装非常简单，打开 VS Code 之后，在插件管理，搜索 Markdown Preview Enhanced 这个插件，并选择安装，安装好之后重新加载就行了。</p>
+
+<h2 id="预览配置">预览配置</h2>
+
+<p>我们编写 Markdown 之后，在 VS Code 右上角有一个预览的按钮，点击预览按钮之后，会弹出 Markdown 的预览界面。不过预览界面在 Windows 上的效果并不太好（主要是字体问题）。而我选择 MPE 的原因就在于它支持你自己定义预览显示，并且也支持输出 Html 或者 PDF 格式。</p>
+
+<p>根据 MPE 的<a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/">文档说明</a>，在<a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/customize-css">自定义 CSS 部分</a>，我们可以根据文档对我们的预览进行修改。下面是我自己的预览设置。</p>
+
+<pre><code class="language-css">.markdown-preview.markdown-preview {
+
+    font-size: 17px;
+
+    font-family: &quot;Myriad Pro&quot;,&quot;文泉驿微米黑&quot;;
+
+    pre, code {
+        font-family: 'Menlo';
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Myriad Pro','黑体';
+    }
+
+    h1{
+        font-size: 28px;
+    }
+    h2{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 22px;
+    }
+    h4, h5 {
+        font-size: 20px;
+    }
+}
+</code></pre>
+
+<p>修改好预览设置之后，我们可以看下显示的效果：</p>
+
+<p><center><img src="/posts/image/mpe.png" alt="效果图" /></center></p>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/customize-css">自定义 CSS</a></li>
+</ul>
+
+</main>
+
+  <footer>
+  
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+        inlineMath: [ ['$', '$'],["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+
+    "HTML-CSS": {availableFonts: ["TeX"]}
+});
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<link rel="stylesheet" href="/css/style/vs.css">
+<script src="/css/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+  
+  <hr/>
+  &copy; <a href="https://ddswhu.me/">Dongsheng Deng</a> 2018 &ndash; 2020 Theme <a href="https://themes.gohugo.io/hugo-xmin/">XMin</a> Powered by Hugo and Netlify
+  
+  </footer>
+  </body>
+</html>
+

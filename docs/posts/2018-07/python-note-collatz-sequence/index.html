@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Python Notes 1 - Collatz Sequence | Dongsheng Deng&#39;s homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f3eaf531519275f71e2dea3ffbd25d5e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/research/">Research</a></li>
+      
+      <li><a href="/resource/">Resource</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="/travel/">Travel</a></li>
+      
+      <li><a href="/links/">Links</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+<div class="article-meta">
+<h1><span class="title">Python Notes 1 - Collatz Sequence</span></h1>
+ Dongsheng Deng @
+2018/07/04
+</div>
+
+<main>
+
+
+<h2 id="1-定义函数实现循环调用">1. 定义函数实现循环调用</h2>
+
+<h3 id="1-1-问题描述-collatz-序列">1.1 问题描述 &mdash; Collatz 序列</h3>
+
+<p>编写一个名为 <code>collatz()</code> 的函数，它有一个名为 <code>number</code> 的参数。如果参数是偶数，那么 <code>collatz()</code> 返回 <code>number//2</code>，并返回该值。如果 <code>number</code> 为奇数，<code>collatz()</code> 打印并返回 <code>3*number+1</code>。</p>
+
+<p>然后编写一个程序，让用户输入一个整数，并不断对这个数调用 <code>collatz()</code>，直到函数返回值为 1。</p>
+
+<blockquote>
+<ol>
+<li>记得将 input() 的返回值用 int() 函数转为一个整数，否则它会是一个字符串。</li>
+<li>number %2 == 0，整数 number 就是偶数，如果 number %2 == 1，它就是奇数。</li>
+</ol>
+</blockquote>
+
+<p>这个程序的输出结果应该像如下：</p>
+
+<pre><code class="language-python">Enter number:
+3
+10
+5
+16
+8
+4
+2
+1
+</code></pre>
+
+<h3 id="1-2-解决方法">1.2 解决方法</h3>
+
+<p>思路：利用 while 进行判断，让 collatz 自己循环调用自己。(<a href="/posts/archive/collatz.py">代码下载</a>)</p>
+
+<pre><code class="language-python">def collatz(number):
+    if number % 2 == 0:
+        print(number // 2)
+        return number // 2
+    else:
+        print(3*number + 1)
+        return 3*number + 1
+
+n = input(&quot;Enter number: \n&quot;)
+
+while n != 1:
+    n = collatz(number=int(n))
+</code></pre>
+
+<h2 id="2-输入验证">2. 输入验证</h2>
+
+<p>在前面的项目中添加 <code>try</code> 和 <code>except</code> 语句，检测用户是否输入了一个非整数的字符串。</p>
+
+<blockquote>
+<p>正常情况下， int() 函数传入了一个非整数字符串时，会产生 ValueError 错误。</p>
+</blockquote>
+
+<h3 id="2-1-解决方法">2.1 解决方法</h3>
+
+<p>思路：在外层套一个 <code>try except</code> 即可。(<a href="/posts/archive/input_verify.py">代码下载</a>)</p>
+
+<pre><code class="language-python">def collatz(number):
+    if number % 2 == 0:
+        print(number // 2)
+        return number // 2
+    else:
+        print(3*number + 1)
+        return 3*number + 1
+
+n = input(&quot;Enter number: \n&quot;)
+
+
+try:
+    number = int(n)
+    while number != 1:
+        number = collatz(number=number)
+except:
+    print(&quot;Please input an integer!&quot;)
+</code></pre>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/33508034/making-a-collatz-program-automate-the-boring-stuff">Making a collatz program automate the boring stuff</a></li>
+</ul>
+
+</main>
+
+  <footer>
+  
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+        inlineMath: [ ['$', '$'],["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+
+    "HTML-CSS": {availableFonts: ["TeX"]}
+});
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<link rel="stylesheet" href="/css/style/vs.css">
+<script src="/css/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+  
+  <hr/>
+  &copy; <a href="https://ddswhu.me/">Dongsheng Deng</a> 2018 &ndash; 2020 Theme <a href="https://themes.gohugo.io/hugo-xmin/">XMin</a> Powered by Hugo and Netlify
+  
+  </footer>
+  </body>
+</html>
+

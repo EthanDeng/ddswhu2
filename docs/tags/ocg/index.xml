@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ocg on Dongsheng Deng&#39;s homepage</title>
+    <link>/tags/ocg/</link>
+    <description>Recent content in ocg on Dongsheng Deng&#39;s homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ocg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create and Using OCG in LaTeX</title>
+      <link>/posts/2018-07/create-ocg-in-latex/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-07/create-ocg-in-latex/</guid>
+      <description>1. 最初的设想 在学习 Python 的时候，看到一个习题集，每个习题的后面是答案，而网址在每个习题的下面提供了一个点击的按钮，当点击的时候可以显示答案，当时我就想，LaTeX 的宏包有没有能够实现这个功能的？顺藤摸瓜找到了 ocg 包，然后其进化版 ocgx，以及最终进化版 ocgx2。
+OCG（Optional Content Groups），暂译为可选内容组，指的是在 PDF 中嵌套可选可视的内容。比如加入图层（layer），在查看的时候，通过不同的图层搭配可以显示不同的效果。
+2. ocgx2 包介绍 ocgx2 是 Alexander Grahn 从 2015 年开始开发并维护至今的一个用于创建 PDF 图层，管理 ocg 的包，它的作用是想完全替换掉目前 Paul Gaborit 的 ocgx 包和 Werner Moshammer 的 ocg-p 包，因为后两者都有自己的局限性。相比初代 ocg，ocgx 和 ocg-p 包，ocgx2 完全实现了这几个包的功能，并且解决了编译引擎上的局限，现在 ocgx2 支持
+ LaTeX ⇒ dvips ⇒ ps2pdf/Distiller (Xe)LaTeX ⇒ (x)dvipdfmx pdfLaTeX, LuaLaTeX  并且 ocgx2 改善了在处理 PDF 图层时的性能，也提高与其他包同时加载时的兼容性。更为重要的，ocgx2 新增加图层跨页功能，之前宏包没法跨页。
+3. ocgx2 宏包设定 3.1 为 ocg 对象链接添加颜色 \usepackage{hyperref} % do NOT set [ocgcolorlinks] here!</description>
+    </item>
+    
+  </channel>
+</rss>

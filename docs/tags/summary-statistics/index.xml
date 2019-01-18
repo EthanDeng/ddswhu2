@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Summary Statistics on Dongsheng Deng&#39;s homepage</title>
+    <link>/tags/summary-statistics/</link>
+    <description>Recent content in Summary Statistics on Dongsheng Deng&#39;s homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/summary-statistics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Get the Summary Statistics and Wirte it to CSV/Excel</title>
+      <link>/posts/2018-09/summary-statistics-and-write-csv/</link>
+      <pubDate>Sun, 23 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-09/summary-statistics-and-write-csv/</guid>
+      <description>1. 问题描述 在使用 Python 进行数据分析的时候，在对数据清洗完毕之后，一般我们需要对数据进行描述统计，怎么利用 Python 对数据进行基础描述统计呢？更复杂的，如何获得更多的统计量的信息？最后怎么把描述统计的表导出到本地 csv/excel 文件？
+2. 问题初探 Pandas 包自带了一个函数 describe，它能直接获得数据的基础描述统计，例如
+import pandas as pd p2p = pd.DataFrame({&#39;Interest&#39;: [4, 5, 7], &#39;term&#39;: [1, 2, 8], &#39;volume&#39;: [3, 8, 9] }) p2p.describe()  它的输出为
+interest term volume count 3.000000 3.000000 3.000000 mean 5.333333 3.666667 6.666667 std 1.527525 3.785939 3.214550 min 4.000000 1.000000 3.000000 25% 4.500000 1.500000 5.500000 50% 5.000000 2.000000 8.000000 75% 6.000000 5.000000 8.500000 max 7.000000 8.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cmder on Dongsheng Deng&#39;s homepage</title>
+    <link>/tags/cmder/</link>
+    <description>Recent content in Cmder on Dongsheng Deng&#39;s homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/cmder/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Basic Configuration of Cmder</title>
+      <link>/posts/2018-07/configuration-of-cmder/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2018-07/configuration-of-cmder/</guid>
+      <description>1. 让 Cmder 显示中文 打开 Cmder 设置选项，找到 Startup-Environment，在右边添加下面代码
+set LANG=zh_CN.UTF-8  2. 修改 Cmder 默认打开目录 打开 Cmder 设置选项，找到 Startup-Tasks，将右边的 cmd::Cmder as Admin 任务运行内容修改为
+*-new_console:d:C:\Users\Ethan cmd /k &amp;quot;&amp;quot;%ConEmuDir%\..\init.bat&amp;quot; &amp;quot;  其中将 C:\Users\Ethan 替换为自己想要的启动目录。
+然后类似的将 cmd::Cmder 任务的运行内容替换为
+-new_console:d:C:\Users\Ethan cmd /k &amp;quot;&amp;quot;%ConEmuDir%\..\init.bat&amp;quot; &amp;quot;  3. 修改命令提示符 Cmder 默认的命令提示符是 λ，如果想改成常见的 $，只需要找到 Cmder 的安装目录下的 vendor 目录（我的是 C:\Program Files\cmder\vendor），然后将 clink.lua 文件中 λ 修改为 $ 即可。具体的，可以在 clink.lua 文件中搜索 λ（大约在第 43 行）。修改之后 43 行代码为
+local lambda = &amp;quot;$&amp;quot;  4.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,12 @@
+body {
+  font-family: Minion Pro, Palatino Linotype, Garamond, Ubuntu, AR PL UMing HK, Open Sans, Microsoft Yahei, Simsun, serif;
+}
+
+code {
+  font-family: Ubuntu Mono, Fira Mono, Lucida Console, Courier New, Monaco, Kaiti, Microsoft Yahei, monospace;
+  font-size: 95%;
+}
+
+h2,h3,h4,h5,h6{
+	font-family: Microsoft Yahei,  Alegreya, AR PL UMing HK, Open Sans, Arial,sans-serif;
+}
