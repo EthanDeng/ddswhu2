@@ -12,6 +12,7 @@ tags:
 
 如果我们想根据一个变量，比如 `loan_id` 来删除 my_collection 中重复的 document，可以使用下面的命令
 
+
 ```shell
 db.my_collection.aggregate([
     {
