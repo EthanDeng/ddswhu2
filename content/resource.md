@@ -16,9 +16,9 @@ Welcome to the board of resource, here are some useful tools and tutorials.
 + [DownloadHelper.py](/resource/Python/dlh/DownloadHelper.py)
 
 ## LaTeX 
-+ [ElegantLaTeX Book Template](/resource/LaTeX/elegantbook v3.03.zip): [User Guide](/resource/LaTeX/guide_book.pdf)
-+ [ElegantLaTeX Note Template](/resource/LaTeX/ElegantNote 2.00.zip): [User Guide](/resource/LaTeX/guide_note.pdf)
-+ [ElengatLaTeX Paper Template](/resource/LaTeX/elegantpaper.zip): [Github](https://github.com/ElegantLaTeX/ElegantPaper), [CTAN](https://ctan.org/pkg/elegantpaper).
++ [ElegantNote](https://github.com/ElegantLaTeX/ElegantNote): An Elegant LaTeX Template for Notes, [CTAN](https://ctan.org/pkg/elegantnote).
++ [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook): An Elegant LaTeX Template for Books.
++ [ElegantPaper](https://github.com/ElegantLaTeX/ElegantPaper): An Elegant LaTeX Template for Papers, [CTAN](https://ctan.org/pkg/elegantpaper).
 + [Erlangen Fudan](/resource/LaTeX/Erlangen_Fudan.zip): [Example](/resource/LaTeX/Erlangen_Fudan.pdf).
 + [Metropolis](https://github.com/matze/mtheme): A very beautiful and modern beamer theme. ([Github](https://github.com/matze/mtheme), [Download](/resource/LaTeX/mtheme-master.zip), [Manual](http://mirrors.ctan.org/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf))
 + LaTeX Beamer Tutorial. ([Beamer tutorial 2015](/resource/LaTeX/beamer_tutorial_2015.pdf), [Beamer tutorial 2017](/resource/LaTeX/beamer_tutorial_2017.pdf))
@@ -30,5 +30,6 @@ Welcome to the board of resource, here are some useful tools and tutorials.
 ## Design
 
 + I designed the official logo of the [Institute for Advanced Study of Wuhan University](http://ems.whu.edu.cn/xygk/jgsz/xssz/5/2012-01-15/15014.html). ([pdf](/archive/IAS_logo.pdf), [png](/archive/IAS_logo_400.png)) <img src="/archive/IAS_logo_100.png" width = "30" alt="IAS LOGO" style="vertical-align:middle;"/>
++ I designed the logo of the [ElegantLaTeX](https://elegantlatex.org/). ([pdf](/archive/ElegantLaTeX.pdf), [png](/archive/ElegantLaTeX_400.png)) <img src="/archive/ElegantLaTeX_100.png" width = "30" alt="ElegantLaTeX LOGO" style="vertical-align:middle;"/>
 
 
