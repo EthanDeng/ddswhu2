@@ -9,8 +9,10 @@ title: Home
 *Victory won't come to me unless I go to it.--- M. Moore*
 
 Ph.D.in Economics from [School of Economics](http://www.econ.fudan.edu.cn/), [Fudan University](http://www.fudan.edu.cn/2016/index.html), Shanghai, China. <br>
-My research topic is P2P lending and behavior of investors, some kind of behavior economics.<br> 
-My advisor is Prof. [Zhao Chen](http://www.econ.fudan.edu.cn/teacherdetail.php?tid=11). His fields are Microeconomics Econometrics, Labor Economics and Urban Development. Recently, he focuses on Environmental Economics and International Trade. <br>
+My research topic was P2P lending and behavior of investors, some kind of behavior economics.<br> 
+
+I become a member of Ping An Technology of Shanghai Corp from 2019/7/15.
+<br>
 
 
 You can find my CV here, [English version](/archive/EthanDENG-CV-EN.pdf) and  [Chinese version](/archive/EthanDENG-CV-CN.pdf).
@@ -24,7 +26,7 @@ Something you might be interested:
 + I love travel and photography, nothing to do with camera.
 + This section is just for spacing, 233.
 
-If you have any questions, please contact me at [ddswhu@126.com](mailto:ddswhu@126.com). 
+If you have any questions, please contact me at [ddswhu@outlook.com](mailto:ddswhu@outlook.com). 
 
 <!-- <center><img src="/img/fudan.jpg" width = "500" alt="Fudan University"/></center> -->
 
