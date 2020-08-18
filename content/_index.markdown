@@ -11,7 +11,7 @@ title: Home
 Ph.D.in Economics from [School of Economics](http://www.econ.fudan.edu.cn/), [Fudan University](http://www.fudan.edu.cn/2016/index.html), Shanghai, China. <br>
 My research topic was P2P lending and behavior of investors, some kind of behavior economics.<br> 
 
-I become a member of Ping An Technology of Shanghai Corp from 2019/7/15.
+I become a member of Ping An Technology of Shanghai Corp from 2019/7/15, I will be a data scientist, GOGOGO!
 <br>
 
 
