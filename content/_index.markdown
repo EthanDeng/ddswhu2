@@ -2,7 +2,7 @@
 title: Home
 ---
 
-[<img src="/img/bio.png" style="max-width:13%;min-width:40px;float:right;" alt="Dongsheng Deng" />](https://ddswhu.me/)
+[<img src="/img/bio.jpg" style="max-width:13%;min-width:40px;float:right;" alt="Dongsheng Deng" />](https://ddswhu.me/)
 
 # Dongsheng Deng
 
@@ -14,8 +14,6 @@ My research topic was P2P lending and behavior of investors, some kind of behavi
 I become a member of Ping An Technology of Shanghai Corp from 2019/7/15, I will be a data scientist, GOGOGO!
 <br>
 
-
-You can find my CV here, [English version](/archive/EthanDENG-CV-EN.pdf) and  [Chinese version](/archive/EthanDENG-CV-CN.pdf).
 
 Something you might be interested: 
 
